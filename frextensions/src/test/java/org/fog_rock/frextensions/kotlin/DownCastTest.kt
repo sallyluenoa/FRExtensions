@@ -7,7 +7,7 @@ import org.junit.Test
 class DownCastTest {
 
     /**
-     * downCastOrNull(): 正常系
+     * Any?.downCastOrNull(): 正常系
      */
     @Test fun downCastOrNull_castOk() {
         val any: Any = "Hello World!"
@@ -15,7 +15,7 @@ class DownCastTest {
         assertEquals("Hello World!", str)
     }
     /**
-     * downCastOrNull(): キャスト失敗
+     * Any?.downCastOrNull(): 異常系、キャスト失敗
      */
     @Test fun downCastOrNull_castNull() {
         val any: Any = "Hello World!"
@@ -23,7 +23,7 @@ class DownCastTest {
         assertNull(int)
     }
     /**
-     * downCastOrNull(): キャスト前からNULL
+     * Any?.downCastOrNull(): 異常系、キャスト前からNULL
      */
     @Test fun downCastOrNull_nullValue() {
         val any: Any? = null
@@ -32,7 +32,7 @@ class DownCastTest {
     }
 
     /**
-     * downCastOr(defaultValue): 正常系
+     * Any?.downCastOr(defaultValue): 正常系
      */
     @Test fun downCastOr_castOk() {
         val any: Any = "Hello World!"
@@ -40,7 +40,7 @@ class DownCastTest {
         assertEquals("Hello World!", str)
     }
     /**
-     * downCastOr(defaultValue): キャスト失敗
+     * Any?.downCastOr(defaultValue): 異常系、キャスト失敗
      */
     @Test fun downCastOr_defaultValue() {
         val any: Any = "Hello World!"
@@ -48,7 +48,7 @@ class DownCastTest {
         assertEquals(0, int)
     }
     /**
-     * downCastOr(defaultValue): キャスト前からNULL
+     * Any?.downCastOr(defaultValue): 異常系、キャスト前からNULL
      */
     @Test fun downCastOr_nullValue() {
         val any: Any? = null
