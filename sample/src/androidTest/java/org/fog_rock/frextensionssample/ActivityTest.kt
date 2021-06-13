@@ -31,7 +31,10 @@ class ActivityTest {
         Intents.release()
     }
 
-    @Test fun startActivity() {
+    /**
+     * Context.startActivity(): Bundleなし
+     */
+    @Test fun startActivity_withoutBundle() {
         Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivity))
                 .perform(ViewActions.click())
         Intents.intended(Matchers.allOf(
@@ -42,7 +45,10 @@ class ActivityTest {
             .check(ViewAssertions.matches(ViewMatchers.withText("")))
     }
 
-    @Test fun startActivity_withPutExtra() {
+    /**
+     * Context.startActivity(): Bundleあり
+     */
+    @Test fun startActivity_withBundle() {
         Espresso.onView(ViewMatchers.withId(R.id.editText_putExtra_message))
                 .perform(ViewActions.replaceText(textMessage))
         Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivity))
@@ -56,7 +62,10 @@ class ActivityTest {
             .check(ViewAssertions.matches(ViewMatchers.withText(textMessage)))
     }
 
-    @Test fun startActivityAndFinishAll() {
+    /**
+     * Context.startActivityAndFinishAll(): Bundleなし
+     */
+    @Test fun startActivityAndFinishAll_withoutBundle() {
         Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivityAndFinishAll))
             .perform(ViewActions.click())
         Intents.intended(Matchers.allOf(
@@ -67,7 +76,10 @@ class ActivityTest {
             .check(ViewAssertions.matches(ViewMatchers.withText("")))
     }
 
-    @Test fun startActivityAndFinishAll_withPutExtra() {
+    /**
+     * Context.startActivityAndFinishAll(): Bundleあり
+     */
+    @Test fun startActivityAndFinishAll_withBundle() {
         Espresso.onView(ViewMatchers.withId(R.id.editText_putExtra_message))
             .perform(ViewActions.replaceText(textMessage))
         Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivityAndFinishAll))
