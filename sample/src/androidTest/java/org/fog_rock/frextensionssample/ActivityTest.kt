@@ -3,6 +3,7 @@ package org.fog_rock.frextensionssample
 import android.content.Intent
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.intent.matcher.IntentMatchers
 import androidx.test.espresso.matcher.ViewMatchers
@@ -18,6 +19,8 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class ActivityTest {
 
+    private val textMessage = "Hello World!"
+
     @get:Rule val activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Before fun before() {
@@ -28,21 +31,53 @@ class ActivityTest {
         Intents.release()
     }
 
-    @Test fun test_startActivity() {
+    @Test fun startActivity() {
         Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivity))
                 .perform(ViewActions.click())
         Intents.intended(Matchers.allOf(
                 IntentMatchers.hasComponent(SubActivity::class.java.name),
                 IntentMatchers.hasFlags(0)
         ))
+        Espresso.onView(ViewMatchers.withId(R.id.textView_message))
+            .check(ViewAssertions.matches(ViewMatchers.withText("")))
     }
 
-    @Test fun test_startActivityAndFinishAll() {
-        Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivityAndFinishAll))
+    @Test fun startActivity_withPutExtra() {
+        Espresso.onView(ViewMatchers.withId(R.id.editText_putExtra_message))
+                .perform(ViewActions.replaceText(textMessage))
+        Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivity))
                 .perform(ViewActions.click())
         Intents.intended(Matchers.allOf(
-                IntentMatchers.hasComponent(SubActivity::class.java.name),
-                IntentMatchers.hasFlags(Intent.FLAG_ACTIVITY_NEW_TASK, Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            IntentMatchers.hasComponent(SubActivity::class.java.name),
+            IntentMatchers.hasFlags(0),
+            IntentMatchers.hasExtra(SubActivity.ARGS_MESSAGE, textMessage)
         ))
+        Espresso.onView(ViewMatchers.withId(R.id.textView_message))
+            .check(ViewAssertions.matches(ViewMatchers.withText(textMessage)))
+    }
+
+    @Test fun startActivityAndFinishAll() {
+        Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivityAndFinishAll))
+            .perform(ViewActions.click())
+        Intents.intended(Matchers.allOf(
+            IntentMatchers.hasComponent(SubActivity::class.java.name),
+            IntentMatchers.hasFlags(Intent.FLAG_ACTIVITY_NEW_TASK, Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        ))
+        Espresso.onView(ViewMatchers.withId(R.id.textView_message))
+            .check(ViewAssertions.matches(ViewMatchers.withText("")))
+    }
+
+    @Test fun startActivityAndFinishAll_withPutExtra() {
+        Espresso.onView(ViewMatchers.withId(R.id.editText_putExtra_message))
+            .perform(ViewActions.replaceText(textMessage))
+        Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivityAndFinishAll))
+            .perform(ViewActions.click())
+        Intents.intended(Matchers.allOf(
+            IntentMatchers.hasComponent(SubActivity::class.java.name),
+            IntentMatchers.hasFlags(Intent.FLAG_ACTIVITY_NEW_TASK, Intent.FLAG_ACTIVITY_CLEAR_TASK),
+            IntentMatchers.hasExtra(SubActivity.ARGS_MESSAGE, textMessage)
+        ))
+        Espresso.onView(ViewMatchers.withId(R.id.textView_message))
+            .check(ViewAssertions.matches(ViewMatchers.withText(textMessage)))
     }
 }

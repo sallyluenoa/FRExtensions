@@ -9,7 +9,7 @@ import org.fog_rock.frextensionssample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,11 +19,29 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonTestStartActivity.setOnClickListener {
             logI("Clicked Test startActivity.")
-            startActivity<SubActivity>()
+            val message = binding.editTextPutExtraMessage.text.toString()
+            if (message.isEmpty()) {
+                logI("startActivity without message.")
+                startActivity<SubActivity>()
+            } else {
+                logI("startActivity with message.")
+                startActivity<SubActivity>(Bundle().apply {
+                    putString(SubActivity.ARGS_MESSAGE, message)
+                })
+            }
         }
         binding.buttonTestStartActivityAndFinishAll.setOnClickListener {
             logI("Clicked Test startActivityAndFinishAll.")
-            startActivityAndFinishAll<SubActivity>()
+            val message = binding.editTextPutExtraMessage.text.toString()
+            if (message.isEmpty()) {
+                logI("startActivityAndFinishAll without message.")
+                startActivityAndFinishAll<SubActivity>()
+            } else {
+                logI("startActivityAndFinishAll with message.")
+                startActivityAndFinishAll<SubActivity>(Bundle().apply {
+                    putString(SubActivity.ARGS_MESSAGE, message)
+                })
+            }
         }
     }
 }
