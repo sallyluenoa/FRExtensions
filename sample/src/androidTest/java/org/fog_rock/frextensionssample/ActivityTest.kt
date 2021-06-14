@@ -63,6 +63,18 @@ class ActivityTest {
     }
 
     /**
+     * Context.startActivity(): 別のActivity表示
+     */
+    @Test fun startActivity_otherActivity() {
+        Espresso.onView(ViewMatchers.withId(R.id.button_show_fragmentMainActivity))
+                .perform(ViewActions.click())
+        Intents.intended(Matchers.allOf(
+                IntentMatchers.hasComponent(FragmentMainActivity::class.java.name),
+                IntentMatchers.hasFlags(0)
+        ))
+    }
+
+    /**
      * Context.startActivityAndFinishAll(): Bundleなし
      */
     @Test fun startActivityAndFinishAll_withoutBundle() {

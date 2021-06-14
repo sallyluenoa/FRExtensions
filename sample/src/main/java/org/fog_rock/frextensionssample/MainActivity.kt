@@ -43,5 +43,9 @@ class MainActivity : AppCompatActivity() {
                 })
             }
         }
+        binding.buttonShowFragmentMainActivity.setOnClickListener {
+            logI("Show FragmentMainActivity.")
+            startActivity<FragmentMainActivity>()
+        }
     }
 }
