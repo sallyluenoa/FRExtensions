@@ -1,3 +1,3 @@
 include ':frextensions'
 include ':sample'
-rootProject.name = "FRExtensionsSample"
+rootProject.name = "FRExtensions"

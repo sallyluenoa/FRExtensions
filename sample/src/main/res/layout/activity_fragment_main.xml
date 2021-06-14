@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".FragmentMainActivity">
 
-    <EditText
-        android:id="@+id/editText_putExtra_message"
+    <TextView
+        android:id="@+id/textView_message"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text=""
-        android:hint="putExtra message"
+        android:textSize="20sp"
         android:layout_margin="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,37 +19,35 @@
         />
 
     <Button
-        android:id="@+id/button_test_startActivity"
+        android:id="@+id/button_test_addFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Test startActivity"
+        android:text="Test addFragment"
         android:layout_margin="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editText_putExtra_message"
+        app:layout_constraintTop_toBottomOf="@id/textView_message"
         />
 
     <Button
-        android:id="@+id/button_test_startActivityAndFinishAll"
+        android:id="@+id/button_test_replaceFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Test startActivityAndFinishAll"
+        android:text="Test replaceFragment"
         android:layout_margin="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/button_test_startActivity"
+        app:layout_constraintTop_toBottomOf="@id/button_test_addFragment"
         />
 
-    <Button
-        android:id="@+id/button_show_fragmentMainActivity"
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Show FragmentMainActivity"
-        android:backgroundTint="@color/teal_700"
-        android:layout_margin="10dp"
+        android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_test_replaceFragment"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
