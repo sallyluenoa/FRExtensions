@@ -24,10 +24,13 @@ class FragmentTest {
      * デフォルト状態のチェック
      */
     @Test fun defaultView() {
+        // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.textView_message))
             .check(ViewAssertions.matches(ViewMatchers.withText(tagMainFragment)))
+        // Check views.
         Espresso.onView(ViewMatchers.withId(R.id.textView_className))
             .check(ViewAssertions.matches(ViewMatchers.withText(tagMainFragment)))
+        // Press back.
         try {
             Espresso.pressBack()
             Assert.fail("Should have thrown NoActivityResumedException.")
@@ -40,13 +43,17 @@ class FragmentTest {
      * FragmentActivity.addFragment()
      */
     @Test fun addFragment() {
+        // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.button_test_addFragment))
             .perform(ViewActions.click())
+        // Check views.
         Espresso.onView(ViewMatchers.withId(R.id.textView_message))
             .check(ViewAssertions.matches(ViewMatchers.withText(tagSubFragment)))
         Espresso.onView(ViewMatchers.withId(R.id.textView_className))
             .check(ViewAssertions.matches(ViewMatchers.withText(tagSubFragment)))
+        // Press back.
         Espresso.pressBack()
+        // Check views.
         Espresso.onView(ViewMatchers.withId(R.id.textView_message))
             .check(ViewAssertions.matches(ViewMatchers.withText(tagMainFragment)))
         Espresso.onView(ViewMatchers.withId(R.id.textView_className))
@@ -57,12 +64,15 @@ class FragmentTest {
      * FragmentActivity.replaceFragment()
      */
     @Test fun replaceFragment() {
+        // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.button_test_replaceFragment))
             .perform(ViewActions.click())
+        // Check views.
         Espresso.onView(ViewMatchers.withId(R.id.textView_message))
             .check(ViewAssertions.matches(ViewMatchers.withText(tagSubFragment)))
         Espresso.onView(ViewMatchers.withId(R.id.textView_className))
             .check(ViewAssertions.matches(ViewMatchers.withText(tagSubFragment)))
+        // Press back.
         try {
             Espresso.pressBack()
             Assert.fail("Should have thrown NoActivityResumedException.")
