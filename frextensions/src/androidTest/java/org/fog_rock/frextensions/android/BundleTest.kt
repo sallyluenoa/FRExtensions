@@ -2,7 +2,7 @@ package org.fog_rock.frextensions.android
 
 import android.os.Bundle
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import org.junit.Assert.*
+import com.google.common.truth.Truth
 import org.junit.Test
 import org.junit.runner.RunWith
 
@@ -18,7 +18,7 @@ class BundleTest {
     @Test fun arrayExtra_normal() {
         val bundle = Bundle().apply { putArrayExtra("array", stringArray) }
         val array = bundle.getArrayExtra<String>("array")
-        assertArrayEquals(stringArray, array)
+        Truth.assertThat(array).isEqualTo(stringArray)
     }
     /**
      * Bundle.putArrayExtra(), getArrayExtra(): 異常系、テンプレートタイプミス
@@ -26,7 +26,7 @@ class BundleTest {
     @Test fun arrayExtra_tempInvalid() {
         val bundle = Bundle().apply { putArrayExtra("array", stringArray) }
         val array = bundle.getArrayExtra<Int>("array")
-        assertNull(array)
+        Truth.assertThat(array).isNull()
     }
     /**
      * Bundle.putArrayExtra(), getArrayExtra(): 異常系、putタイプミス
@@ -34,7 +34,7 @@ class BundleTest {
     @Test fun arrayExtra_putInvalid() {
         val bundle = Bundle().apply { putInt("number", 1) }
         val array = bundle.getArrayExtra<String>("number")
-        assertNull(array)
+        Truth.assertThat(array).isNull()
     }
     /**
      * Bundle.putArrayExtra(), getArrayExtra(): 異常系、getタイプミス
@@ -42,7 +42,7 @@ class BundleTest {
     @Test fun arrayExtra_getInvalid() {
         val bundle = Bundle().apply { putArrayExtra("array", stringArray) }
         val number = bundle.getInt("array", 1)
-        assertEquals(1, number)
+        Truth.assertThat(number).isEqualTo(1)
     }
     /**
      * Bundle.putArrayExtra(), getArrayExtra(): 異常系、put未指定
@@ -50,7 +50,7 @@ class BundleTest {
     @Test fun arrayExtra_empty() {
         val bundle = Bundle()
         val array = bundle.getArrayExtra<String>("array")
-        assertNull(array)
+        Truth.assertThat(array).isNull()
     }
 
     /**
@@ -59,7 +59,7 @@ class BundleTest {
     @Test fun listExtra_normal() {
         val bundle = Bundle().apply { putListExtra("list", stringList) }
         val list = bundle.getListExtra<String>("list")
-        assertEquals(stringList, list)
+        Truth.assertThat(list).isEqualTo(stringList)
     }
     /**
      * Bundle.putListExtra(), getListExtra(): 異常系、テンプレートタイプミス
@@ -67,7 +67,7 @@ class BundleTest {
     @Test fun listExtra_tempInvalid() {
         val bundle = Bundle().apply { putListExtra("array", stringList) }
         val array = bundle.getListExtra<Int>("array")
-        assertNull(array)
+        Truth.assertThat(array).isNull()
     }
     /**
      * Bundle.putListExtra(), getListExtra(): 異常系、putタイプミス
@@ -75,7 +75,7 @@ class BundleTest {
     @Test fun listExtra_putInvalid() {
         val bundle = Bundle().apply { putInt("number", 1) }
         val array = bundle.getListExtra<String>("number")
-        assertNull(array)
+        Truth.assertThat(array).isNull()
     }
     /**
      * Bundle.putListExtra(), getListExtra(): 異常系、getタイプミス
@@ -83,7 +83,7 @@ class BundleTest {
     @Test fun listExtra_getInvalid() {
         val bundle = Bundle().apply { putListExtra("list", stringList) }
         val number = bundle.getInt("list", 1)
-        assertEquals(1, number)
+        Truth.assertThat(number).isEqualTo(1)
     }
     /**
      * Bundle.putListExtra(), getListExtra(): 異常系、put未指定
@@ -91,6 +91,6 @@ class BundleTest {
     @Test fun listExtra_empty() {
         val bundle = Bundle()
         val list = bundle.getListExtra<String>("list")
-        assertNull(list)
+        Truth.assertThat(list).isNull()
     }
 }
