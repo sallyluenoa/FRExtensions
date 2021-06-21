@@ -32,14 +32,14 @@ android {
 }
 
 dependencies {
-
+    // main
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.5.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-
-    testImplementation 'junit:junit:4.13.2'
-    testImplementation 'com.google.truth:truth:1.1.3'
-
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.ext:truth:1.3.0'
+    implementation "androidx.appcompat:appcompat:${androidx_versions["appcompat"]}"
+    implementation "androidx.core:core-ktx:${androidx_versions["core"]}"
+    // test
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "com.google.truth:truth:${google_versions["truth"]}"
+    // androidTest
+    androidTestImplementation "androidx.test.ext:junit:${androidx_versions["test_junit"]}"
+    androidTestImplementation "androidx.test.ext:truth:${androidx_versions["test_core"]}"
 }
