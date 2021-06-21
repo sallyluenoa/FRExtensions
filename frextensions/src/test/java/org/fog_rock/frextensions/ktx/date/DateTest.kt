@@ -1,4 +1,4 @@
-package org.fog_rock.frextensions.kotlin
+package org.fog_rock.frextensions.ktx.date
 
 import com.google.common.truth.Truth
 import org.junit.Test

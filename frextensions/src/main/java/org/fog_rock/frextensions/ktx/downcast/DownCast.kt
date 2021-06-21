@@ -1,4 +1,4 @@
-package org.fog_rock.frextensions.kotlin
+package org.fog_rock.frextensions.ktx.downcast
 
 inline fun <reified T> Any?.downCastOrNull(): T? = if (this is T) this else null
 

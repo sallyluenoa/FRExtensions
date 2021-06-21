@@ -1,4 +1,4 @@
-package org.fog_rock.frextensions.kotlin
+package org.fog_rock.frextensions.ktx.date
 
 import java.text.ParseException
 import java.text.SimpleDateFormat
