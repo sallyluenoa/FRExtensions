@@ -19,7 +19,7 @@ class DateTest {
      * Long.toDefaultDateString(): 正常系
      */
     @Test fun toDefaultDateString_default() {
-        Truth.assertThat(dateLong.toDefaultDateString(FORMAT_YYYYMMDD_HHMMSS_SSS))
+        Truth.assertThat(dateLong.toDefaultDateString(FRDateFormat.YYYYMMDD_HHMMSS_SSS.format))
             .isEqualTo("2021/06/01 04:23:57.558")
     }
     /**
@@ -27,7 +27,7 @@ class DateTest {
      */
     @Test fun toDefaultDateString_localeJPN() {
         Truth.assertThat(dateLong
-            .toDefaultDateString(FORMAT_JP_YYYYMMDDE_HHMMSS, Locale.JAPAN))
+            .toDefaultDateString(FRDateFormat.JP_YYYYMMDDE_HHMMSS.format, Locale.JAPAN))
             .isEqualTo("2021年6月1日（火）4時23分57秒")
     }
 
@@ -42,7 +42,7 @@ class DateTest {
      * Long.toUtcDateString(): 正常系、別フォーマット
      */
     @Test fun toUtcDateString_format() {
-        Truth.assertThat(dateLong.toUtcDateString(FORMAT_YYYYMMDD_HHMMSS))
+        Truth.assertThat(dateLong.toUtcDateString(FRDateFormat.YYYYMMDD_HHMMSS.format))
             .isEqualTo("2021/05/31 19:23:57")
     }
 
@@ -69,7 +69,8 @@ class DateTest {
      * String.defaultToDate(): 正常系
      */
     @Test fun defaultToDate_default() {
-        Truth.assertThat("2021/06/01 04:23:57.558".defaultToDate(FORMAT_YYYYMMDD_HHMMSS_SSS))
+        Truth.assertThat("2021/06/01 04:23:57.558"
+            .defaultToDate(FRDateFormat.YYYYMMDD_HHMMSS_SSS.format))
             .isEqualTo(date)
     }
     /**
@@ -77,7 +78,7 @@ class DateTest {
      */
     @Test fun defaultToDate_localeJPN() {
         Truth.assertThat("2021年6月1日（火）4時23分57秒"
-            .defaultToDate(FORMAT_JP_YYYYMMDDE_HHMMSS, Locale.JAPAN))
+            .defaultToDate(FRDateFormat.JP_YYYYMMDDE_HHMMSS.format, Locale.JAPAN))
             .isEqualTo(dateCutMillis)
     }
 
@@ -92,7 +93,7 @@ class DateTest {
      * String.utcToDate(): 正常系、別フォーマット
      */
     @Test fun utcToDate_format() {
-        Truth.assertThat("2021/05/31 19:23:57".utcToDate(FORMAT_YYYYMMDD_HHMMSS))
+        Truth.assertThat("2021/05/31 19:23:57".utcToDate(FRDateFormat.YYYYMMDD_HHMMSS.format))
             .isEqualTo(dateCutMillis)
     }
 
