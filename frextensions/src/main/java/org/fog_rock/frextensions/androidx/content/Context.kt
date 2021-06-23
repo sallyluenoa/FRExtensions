@@ -14,7 +14,7 @@ inline fun <reified T> Context.newIntent(): Intent =
 
 /**
  * アクティビティを起動する.
- * @param bundle インテントへの付加情報
+ * @param bundle インテントへの付加情報、未指定の場合 NULL
  * @see Context.startActivity
  */
 inline fun <reified T: Activity> Context.startActivity(bundle: Bundle? = null) {
@@ -26,7 +26,7 @@ inline fun <reified T: Activity> Context.startActivity(bundle: Bundle? = null) {
 /**
  * アクティビティを起動する.
  * スタックされたアクティビティはすべて破棄される.
- * @param bundle インテントへの付加情報
+ * @param bundle インテントへの付加情報、未指定の場合 NULL
  * @see Context.startActivity
  */
 inline fun <reified T: Activity> Context.startActivityAndFinishAll(bundle: Bundle? = null) {
