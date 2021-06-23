@@ -42,4 +42,5 @@ dependencies {
     // androidTest
     androidTestImplementation "androidx.test.ext:junit:${androidx_versions["test_junit"]}"
     androidTestImplementation "androidx.test.ext:truth:${androidx_versions["test_core"]}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${androidx_versions["test_espresso"]}"
 }
