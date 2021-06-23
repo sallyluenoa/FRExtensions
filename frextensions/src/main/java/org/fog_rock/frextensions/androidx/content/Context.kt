@@ -1,4 +1,4 @@
-package org.fog_rock.frextensions.android
+package org.fog_rock.frextensions.androidx.content
 
 import android.app.Activity
 import android.content.Context
