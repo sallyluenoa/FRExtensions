@@ -2,9 +2,9 @@ package org.fog_rock.frextensionssample
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import org.fog_rock.frextensions.android.logI
-import org.fog_rock.frextensions.android.startActivity
-import org.fog_rock.frextensions.android.startActivityAndFinishAll
+import org.fog_rock.frextensions.androidx.content.startActivity
+import org.fog_rock.frextensions.androidx.content.startActivityAndFinishAll
+import org.fog_rock.frextensions.androidx.log.logI
 import org.fog_rock.frextensionssample.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

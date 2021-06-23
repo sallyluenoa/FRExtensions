@@ -1,4 +1,4 @@
-package org.fog_rock.frextensions.kotlin
+package org.fog_rock.frextensions.ktx.downcast
 
 import com.google.common.truth.Truth
 import org.junit.Test
