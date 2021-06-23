@@ -2,10 +2,10 @@ package org.fog_rock.frextensionssample
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import org.fog_rock.frextensions.android.addFragment
-import org.fog_rock.frextensions.android.callback.FRFragmentCallback
-import org.fog_rock.frextensions.android.logI
-import org.fog_rock.frextensions.android.replaceFragment
+import org.fog_rock.frextensions.androidx.fragment.FRFragmentCallback
+import org.fog_rock.frextensions.androidx.fragment.addFragment
+import org.fog_rock.frextensions.androidx.fragment.replaceFragment
+import org.fog_rock.frextensions.androidx.log.logI
 import org.fog_rock.frextensionssample.databinding.ActivityFragmentMainBinding
 
 class FragmentMainActivity : AppCompatActivity(), FRFragmentCallback {

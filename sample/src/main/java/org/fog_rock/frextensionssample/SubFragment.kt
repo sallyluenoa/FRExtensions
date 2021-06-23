@@ -5,9 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import org.fog_rock.frextensions.android.TAG
-import org.fog_rock.frextensions.android.activityCallback
-import org.fog_rock.frextensions.android.callback.FRFragmentCallback
+import org.fog_rock.frextensions.androidx.fragment.FRFragmentCallback
+import org.fog_rock.frextensions.androidx.fragment.activityCallback
+import org.fog_rock.frextensions.androidx.log.TAG
 import org.fog_rock.frextensionssample.databinding.FragmentDefaultBinding
 
 class SubFragment : Fragment() {
