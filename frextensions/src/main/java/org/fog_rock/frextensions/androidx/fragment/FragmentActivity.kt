@@ -1,4 +1,4 @@
-package org.fog_rock.frextensions.android
+package org.fog_rock.frextensions.androidx.fragment
 
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
