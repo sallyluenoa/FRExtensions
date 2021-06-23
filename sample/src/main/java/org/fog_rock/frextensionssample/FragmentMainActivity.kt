@@ -30,7 +30,7 @@ class FragmentMainActivity : AppCompatActivity(), FRFragmentCallback {
         replaceFragment(MainFragment(), R.id.fragment_container)
     }
 
-    override fun onCreateFragmentView(className: String) {
-        binding.textViewMessage.text = className
+    override fun onCreateFragmentView(tag: String) {
+        binding.textViewMessage.text = tag
     }
 }
