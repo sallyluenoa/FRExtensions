@@ -44,7 +44,9 @@ jobs:
           mv ./sample/build/outputs/apk/release/*.apk ./build/outputs
 
       - name: Build documents with Gradle
-        run: ./gradlew dokkaHtml --no-daemon
+        run: |
+          ./gradlew dokkaHtml --no-daemon
+          sed -i -E '/^\s*<h1.*<\/h1>$/s/frextensions/FRExtensions/g' ./frextensions/build/dokka/html/index.html
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v2
