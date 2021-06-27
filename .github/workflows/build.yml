@@ -43,13 +43,13 @@ jobs:
         with:
           name: build-artifacts
           path: |
-            ~/frextensions/build/outputs/aar/*.aar
-            ~/sample/build/outputs/apk/release/*.apk
+            ./frextensions/build/outputs/aar/*.aar
+            ./sample/build/outputs/apk/release/*.apk
           retention-days: 1
 
       - name: Archive documents artifacts
         uses: actions/upload-artifact@v2
         with:
           name: doc-artifacts
-          path: ~/frextensions/build/dokka/html
+          path: ./frextensions/build/dokka/html
           retention-days: 1
