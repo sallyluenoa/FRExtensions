@@ -4,20 +4,30 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion buildConfig.compileSdk
 
     defaultConfig {
         applicationId "org.fog_rock.frextensionssample"
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion buildConfig.minSdk
+        targetSdkVersion buildConfig.targetSdk
+        versionCode buildConfig.versionCode
+        versionName buildConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
 
+        archivesBaseName = "$buildConfig.applicationName-v$buildConfig.versionName"
+    }
+    signingConfigs {
+        release {
+            storeFile rootProject.file('sallyluenoa_sample.jks')
+            storePassword System.getenv('STORE_PASSWORD')
+            keyAlias System.getenv('KEY_ALIAS')
+            keyPassword System.getenv('KEY_PASSWORD')
+        }
+    }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -37,15 +47,15 @@ android {
 dependencies {
     // main
     implementation project(':frextensions')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.appcompat:appcompat:${androidx_versions["appcompat"]}"
-    implementation "androidx.constraintlayout:constraintlayout:${androidx_versions["constraintlayout"]}"
-    implementation "androidx.core:core-ktx:${androidx_versions["core"]}"
-    implementation "com.google.android.material:material:${google_versions["android_material"]}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+    implementation "androidx.appcompat:appcompat:$versions.androidx.appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.androidx.constraintlayout"
+    implementation "androidx.core:core-ktx:$versions.androidx.core"
+    implementation "com.google.android.material:material:$versions.google.androidMaterial"
     // androidTest
-    androidTestImplementation "androidx.test:core-ktx:${androidx_versions["test_core"]}"
-    androidTestImplementation "androidx.test.ext:junit:${androidx_versions["test_junit"]}"
-    androidTestImplementation "androidx.test.ext:truth:${androidx_versions["test_core"]}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${androidx_versions["test_espresso"]}"
-    androidTestImplementation "androidx.test.espresso:espresso-intents:${androidx_versions["test_espresso"]}"
+    androidTestImplementation "androidx.test:core-ktx:$versions.androidx.testCore"
+    androidTestImplementation "androidx.test.ext:junit:$versions.androidx.testJunit"
+    androidTestImplementation "androidx.test.ext:truth:$versions.androidx.testCore"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.androidx.testEspresso"
+    androidTestImplementation "androidx.test.espresso:espresso-intents:$versions.androidx.testEspresso"
 }

@@ -5,16 +5,18 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion buildConfig.compileSdk
 
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "0.1.0"
+        minSdkVersion buildConfig.minSdk
+        targetSdkVersion buildConfig.targetSdk
+        versionCode buildConfig.versionCode
+        versionName buildConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        archivesBaseName = "$buildConfig.applicationName-v$buildConfig.versionName"
     }
 
     buildTypes {
@@ -34,14 +36,14 @@ android {
 
 dependencies {
     // main
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.appcompat:appcompat:${androidx_versions["appcompat"]}"
-    implementation "androidx.core:core-ktx:${androidx_versions["core"]}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+    implementation "androidx.appcompat:appcompat:$versions.androidx.appcompat"
+    implementation "androidx.core:core-ktx:$versions.androidx.core"
     // test
-    testImplementation "junit:junit:$junit_version"
-    testImplementation "com.google.truth:truth:${google_versions["truth"]}"
+    testImplementation "junit:junit:$versions.junit"
+    testImplementation "com.google.truth:truth:$versions.google.truth"
     // androidTest
-    androidTestImplementation "androidx.test.ext:junit:${androidx_versions["test_junit"]}"
-    androidTestImplementation "androidx.test.ext:truth:${androidx_versions["test_core"]}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${androidx_versions["test_espresso"]}"
+    androidTestImplementation "androidx.test.ext:junit:$versions.androidx.testJunit"
+    androidTestImplementation "androidx.test.ext:truth:$versions.androidx.testCore"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.androidx.testEspresso"
 }
