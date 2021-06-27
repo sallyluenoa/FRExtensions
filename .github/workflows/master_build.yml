@@ -38,13 +38,17 @@ jobs:
       - name: Build documents with Gradle
         run: ./gradlew dokkaHtml --no-daemon
 
+      - name: Move build artifacts
+        run: |
+          mkdir ./build/outputs
+          mv ./frextensions/build/outputs/aar/*.aar ./build/outputs
+          mv ./sample/build/outputs/apk/release/*.apk ./build/outputs
+
       - name: Archive build artifacts
         uses: actions/upload-artifact@v2
         with:
           name: build-artifacts
-          path: |
-            ./frextensions/build/outputs/aar/*.aar
-            ./sample/build/outputs/apk/release/*.apk
+          path: ./build/outputs
           retention-days: 1
 
       - name: Archive documents artifacts
