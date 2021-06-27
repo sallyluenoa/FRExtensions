@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - issues/8 # for build test.
 
 jobs:
   build:
