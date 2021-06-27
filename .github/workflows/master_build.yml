@@ -33,16 +33,18 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build projects with Gradle
-        run: ./gradlew assembleRelease --no-daemon
-
-      - name: Build documents with Gradle
-        run: ./gradlew dokkaHtml --no-daemon
-
-      - name: Move build artifacts
         run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > ./sallyluenoa_sample.jks
+          export STORE_PASSWORD="${{ secrets.STORE_PASSWORD }}"
+          export KEY_ALIAS="${{ secrets.KEY_ALIAS }}"
+          export KEY_PASSWORD="${{ secrets.KEY_PASSWORD }}"
+          ./gradlew assembleRelease --no-daemon
           mkdir ./build/outputs
           mv ./frextensions/build/outputs/aar/*.aar ./build/outputs
           mv ./sample/build/outputs/apk/release/*.apk ./build/outputs
+
+      - name: Build documents with Gradle
+        run: ./gradlew dokkaHtml --no-daemon
 
       - name: Archive build artifacts
         uses: actions/upload-artifact@v2
