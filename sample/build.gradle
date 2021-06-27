@@ -14,6 +14,8 @@ android {
         versionName buildConfig.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        archivesBaseName = "$buildConfig.applicationName-v$buildConfig.versionName"
     }
 
     buildTypes {

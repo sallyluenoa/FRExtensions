@@ -3,6 +3,7 @@ buildscript {
     ext {
         // App Build Config
         buildConfig = [
+                applicationName: 'FRExtensions',
                 versionName: '0.1.0',
                 versionCode: 1,
                 compileSdk: 30,
