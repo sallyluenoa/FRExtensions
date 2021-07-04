@@ -1,7 +1,7 @@
 package org.fog_rock.frextensions.androidx.os
 
 import android.os.Bundle
-import org.fog_rock.frextensions.ktx.downcast.downCastOrNull
+import org.fog_rock.frextensions.ktx.downcast.downCastArray
 import java.io.Serializable
 
 /**
@@ -11,7 +11,7 @@ import java.io.Serializable
  * @see androidx.core.os.bundleOf
  */
 inline fun <reified T: Serializable> Bundle.getSerialize(key: String): T? =
-    getSerializable(key).downCastOrNull<T>()
+    getSerializable(key) as? T
 
 /**
  * Bundleからシリアライズを継承したクラスオブジェクトの配列を取得する.
@@ -19,5 +19,5 @@ inline fun <reified T: Serializable> Bundle.getSerialize(key: String): T? =
  * @return シリアライズを継承したクラスオブジェクトの配列、取得に失敗した場合は NULL
  * @see getSerialize
  */
-inline fun <reified T: Serializable> Bundle.getSerializeArrayList(key: String): Array<T>? =
-    getSerializable(key).downCastOrNull<Array<T>>()
+inline fun <reified T: Serializable> Bundle.getSerializeArray(key: String): Array<T>? =
+    getSerializable(key).downCastArray()

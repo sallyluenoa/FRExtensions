@@ -83,60 +83,60 @@ class BundleTest {
     }
 
     /**
-     * Bundle.getSerializeArrayList(): ENUM型正常系
+     * Bundle.getSerializeArray(): ENUM型正常系
      */
-    @Test fun getSerializeArrayList_enumOK() {
-        Truth.assertThat(bundle.getSerializeArrayList<EnumColor>(keyEnumColorArray))
+    @Test fun getSerializeArray_enumOK() {
+        Truth.assertThat(bundle.getSerializeArray<EnumColor>(keyEnumColorArray))
             .isEqualTo(enumColorArray)
     }
     /**
-     * Bundle.getSerializeArrayList(): ENUM型異常系（Serialize型ではない）
+     * Bundle.getSerializeArray(): ENUM型異常系（Serialize型ではない）
      */
-    @Test fun getSerializeArrayList_enumNG_nonSerialize() {
-        Truth.assertThat(bundle.getSerializeArrayList<EnumColor>(keyEnumColorCodeArray))
+    @Test fun getSerializeArray_enumNG_nonSerialize() {
+        Truth.assertThat(bundle.getSerializeArray<EnumColor>(keyEnumColorCodeArray))
             .isNull()
     }
     /**
-     * Bundle.getSerializeArrayList(): ENUM型異常系（別のSerialize型）
+     * Bundle.getSerializeArray(): ENUM型異常系（別のSerialize型）
      */
-    @Test fun getSerializeArrayList_enumNG_otherSerialize() {
-        Truth.assertThat(bundle.getSerializeArrayList<EnumColor>(keyDataColorArray))
+    @Test fun getSerializeArray_enumNG_otherSerialize() {
+        Truth.assertThat(bundle.getSerializeArray<EnumColor>(keyDataColorArray))
             .isNull()
     }
     /**
-     * Bundle.getSerializeArrayList(): ENUM型異常系（配列ではない）
+     * Bundle.getSerializeArray(): ENUM型異常系（配列ではない）
      */
-    @Test fun getSerializeArrayList_enumNG_nonArray() {
-        Truth.assertThat(bundle.getSerializeArrayList<EnumColor>(keyEnumColor))
+    @Test fun getSerializeArray_enumNG_nonArray() {
+        Truth.assertThat(bundle.getSerializeArray<EnumColor>(keyEnumColor))
             .isNull()
     }
 
     /**
-     * Bundle.getSerializeArrayList(): DATA型正常系
+     * Bundle.getSerializeArray(): DATA型正常系
      */
-    @Test fun getSerializeArrayList_dataOK() {
-        Truth.assertThat(bundle.getSerializeArrayList<DataColor>(keyDataColorArray))
+    @Test fun getSerializeArray_dataOK() {
+        Truth.assertThat(bundle.getSerializeArray<DataColor>(keyDataColorArray))
             .isEqualTo(dataColorArray)
     }
     /**
-     * Bundle.getSerializeArrayList(): ENUM型異常系（Serialize型ではない）
+     * Bundle.getSerializeArray(): ENUM型異常系（Serialize型ではない）
      */
-    @Test fun getSerializeArrayList_dataNG_nonSerialize() {
-        Truth.assertThat(bundle.getSerializeArrayList<DataColor>(keyDataColorCodeArray))
+    @Test fun getSerializeArray_dataNG_nonSerialize() {
+        Truth.assertThat(bundle.getSerializeArray<DataColor>(keyDataColorCodeArray))
             .isNull()
     }
     /**
-     * Bundle.getSerializeArrayList(): ENUM型異常系（別のSerialize型）
+     * Bundle.getSerializeArray(): ENUM型異常系（別のSerialize型）
      */
-    @Test fun getSerializeArrayList_dataNG_otherSerialize() {
-        Truth.assertThat(bundle.getSerializeArrayList<DataColor>(keyEnumColorArray))
+    @Test fun getSerializeArray_dataNG_otherSerialize() {
+        Truth.assertThat(bundle.getSerializeArray<DataColor>(keyEnumColorArray))
             .isNull()
     }
     /**
-     * Bundle.getSerializeArrayList(): ENUM型異常系（配列ではない）
+     * Bundle.getSerializeArray(): ENUM型異常系（配列ではない）
      */
-    @Test fun getSerializeArrayList_dataNG() {
-        Truth.assertThat(bundle.getSerializeArrayList<DataColor>(keyDataColor))
+    @Test fun getSerializeArray_dataNG() {
+        Truth.assertThat(bundle.getSerializeArray<DataColor>(keyDataColor))
             .isNull()
     }
 }

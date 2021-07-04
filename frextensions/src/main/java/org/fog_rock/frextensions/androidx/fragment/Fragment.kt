@@ -1,7 +1,6 @@
 package org.fog_rock.frextensions.androidx.fragment
 
 import androidx.fragment.app.Fragment
-import org.fog_rock.frextensions.ktx.downcast.downCastOrNull
 
 /**
  * 親アクティビティにイベントを通知するためのコールバックインターフェースを取得する.
@@ -9,4 +8,4 @@ import org.fog_rock.frextensions.ktx.downcast.downCastOrNull
  * @see FRFragmentCallback
  */
 inline fun <reified T: FRFragmentCallback> Fragment.activityCallback(): T? =
-    requireActivity().downCastOrNull()
+    requireActivity() as? T
