@@ -4,6 +4,9 @@ import com.google.common.truth.Truth
 import org.junit.Before
 import org.junit.Test
 
+/**
+ * @see downCastMap
+ */
 class DownCastMapTest {
 
     private var anyObject: Any? = null
@@ -12,6 +15,9 @@ class DownCastMapTest {
         anyObject = null
     }
 
+    /**
+     * 正常系
+     */
     @Test
     fun downCastMap_ok() {
         val strMap = mapOf(
@@ -23,18 +29,36 @@ class DownCastMapTest {
         Truth.assertThat(anyObject.downCastMap<String, String>()).isEqualTo(strMap)
     }
 
+    /**
+     * 準正常系: 空セット
+     */
+    @Test fun downCastMap_emptyMap() {
+        val emptyMap = emptyMap<String, String>()
+        anyObject = emptyMap
+        Truth.assertThat(anyObject.downCastMap<String, String>()).isEqualTo(emptyMap)
+    }
+
+    /**
+     * 異常系: マップではなくシンプルな型
+     */
     @Test fun downCastMap_singleType() {
         val str = "Hello World!"
         anyObject = str
         Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
     }
 
+    /**
+     * 異常系: マップではなくセット
+     */
     @Test fun downCastMap_set() {
         val strSet = setOf("Hello", "World", "!")
         anyObject = strSet
         Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
     }
 
+    /**
+     * 異常系: マップに内包しているキーの型が不一致
+     */
     @Test fun downCastMap_missTypedKey() {
         val intKeyMap = mapOf(
             1 to "Hello",
@@ -45,6 +69,9 @@ class DownCastMapTest {
         Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
     }
 
+    /**
+     * 異常系: マップに内包しているバリューの型が不一致
+     */
     @Test fun downCastMap_missTypedValue() {
         val intValueMap = mapOf(
             "Hello" to 1,
@@ -55,6 +82,9 @@ class DownCastMapTest {
         Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
     }
 
+    /**
+     * 異常系: マップに内包しているキーとバリューの型が不一致
+     */
     @Test fun downCastMap_missTypedKeyValue() {
         val intMap = mapOf(
             1 to 1,
@@ -65,6 +95,9 @@ class DownCastMapTest {
         Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
     }
 
+    /**
+     * 異常系: マップに内包している型が複数存在
+     */
     @Test fun downCastMap_mixTypedMap() {
         val mixMap = mapOf(
             "Hello" to "Hello",
@@ -76,12 +109,9 @@ class DownCastMapTest {
         Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
     }
 
-    @Test fun downCastMap_emptyMap() {
-        val emptyMap = emptyMap<String, String>()
-        anyObject = emptyMap
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isEqualTo(emptyMap)
-    }
-
+    /**
+     * 異常系: オブジェクトがNULL
+     */
     @Test fun downCastMap_null() {
         Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
     }
