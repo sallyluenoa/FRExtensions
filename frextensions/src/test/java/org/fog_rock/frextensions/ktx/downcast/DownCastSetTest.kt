@@ -1,19 +1,12 @@
 package org.fog_rock.frextensions.ktx.downcast
 
 import com.google.common.truth.Truth
-import org.junit.Before
 import org.junit.Test
 
 /**
  * @see downCastSet
  */
-class DownCastSetTest {
-
-    private var anyObject: Any? = null
-
-    @Before fun before() {
-        anyObject = null
-    }
+class DownCastSetTest : DownCastTest() {
 
     /**
      * 正常系
