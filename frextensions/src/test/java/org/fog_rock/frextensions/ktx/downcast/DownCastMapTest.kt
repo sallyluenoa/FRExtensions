@@ -96,14 +96,42 @@ class DownCastMapTest {
     }
 
     /**
-     * 異常系: マップに内包している型が複数存在
+     * 異常系: マップに内包しているキーの型が複数存在
      */
-    @Test fun downCastMap_mixTypedMap() {
+    @Test fun downCastMap_mixTypedKey() {
         val mixMap = mapOf(
             "Hello" to "Hello",
-            2 to "World",
-            "!" to 3,
-            4 to 4,
+            "World" to "World",
+            1 to "1",
+            "!" to "!",
+        )
+        anyObject = mixMap
+        Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
+    }
+
+    /**
+     * 異常系: マップに内包しているバリューの型が複数存在
+     */
+    @Test fun downCastMap_mixTypedValue() {
+        val mixMap = mapOf(
+            "Hello" to "Hello",
+            "World" to "World",
+            "1" to 1,
+            "!" to "!",
+        )
+        anyObject = mixMap
+        Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
+    }
+
+    /**
+     * 異常系: マップに内包しているキーとバリューの型が複数存在
+     */
+    @Test fun downCastMap_mixTypedKeyValue() {
+        val mixMap = mapOf(
+            "Hello" to "Hello",
+            "World" to "World",
+            1 to 1,
+            "!" to "!",
         )
         anyObject = mixMap
         Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
