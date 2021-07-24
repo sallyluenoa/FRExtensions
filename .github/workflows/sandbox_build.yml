@@ -28,15 +28,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      - name: Restore keystore and export password
+      - name: Build projects with Gradle
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > ./sallyluenoa_sample.jks
           export STORE_PASSWORD="${{ secrets.STORE_PASSWORD }}"
           export KEY_ALIAS="${{ secrets.KEY_ALIAS }}"
           export KEY_PASSWORD="${{ secrets.KEY_PASSWORD }}"
-
-      - name: Build projects with Gradle
-        run: |
           chmod +x gradlew
           ./gradlew assembleRelease --no-daemon
           mkdir ./build/outputs
