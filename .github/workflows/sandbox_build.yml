@@ -13,16 +13,16 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Create new file
-        run |
+        run: |
           touch ./docs/index.md
 
       - name: Git settings
-        run |
+        run: |
           git config --local user.name "${{ github.actor }}"
           git config --local user.email "${{ github.actor }}@users.noreply.github.com"
 
       - name: Commit file
-        run |
+        run: |
           git pull
           git add ./docs/index.md
           git commit -am "Auto commit test."
