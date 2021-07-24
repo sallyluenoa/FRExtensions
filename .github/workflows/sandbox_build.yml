@@ -16,8 +16,8 @@ jobs:
         run |
           touch ./docs/index.md
 
-      - name: git setting
-        run: |
+      - name: Git settings
+        run |
           git config --local user.name "${{ github.actor }}"
           git config --local user.email "${{ github.actor }}@users.noreply.github.com"
 
