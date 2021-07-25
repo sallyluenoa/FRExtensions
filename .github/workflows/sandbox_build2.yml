@@ -15,8 +15,12 @@ jobs:
       - name: Configure version.
         id: config_version
         run: |
-          echo ::set-output name=GLOBAL::$(cat _version.yml | grep -e '^global: \d+\.\d+\.\d+$' | sed -e 's/global: //g')
+          echo ::set-output name=GLOBAL::$(cat ./_version.yml | grep -e '^global: \d+\.\d+\.\d+$' | sed -e 's/global: //g')
 
       - name: Test command.
         run: |
+          cat ./_version.yml
+          cat ./_version.yml | grep -e '^global: \d+\.\d+\.\d+$'
+          cat ./_version.yml | sed -e 's/global: //g'
+          cat ./_version.yml | grep -e '^global: \d+\.\d+\.\d+$' | sed -e 's/global: //g'
           echo ${{ steps.config_version.outputs.GLOBAL }}
