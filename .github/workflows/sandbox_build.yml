@@ -1,0 +1,64 @@
+name: sandbox build
+
+on:
+  push:
+    branches:
+      - sandbox2
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+
+      - name: Restore cache for Gradle
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: Build projects with Gradle
+        env:
+          # Export keystore password.
+          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          # Restore keystore.
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > ./sallyluenoa_sample.jks
+          # Grant execute permission for gradlew.
+          chmod +x gradlew
+          # Build project and publish package.
+          ./gradlew assembleRelease publish --no-daemon
+
+      - name: Build documents with Gradle
+        run: |
+          ./gradlew dokkaHtml --no-daemon
+          sed -i -E '/^\s*<h1.*<\/h1>$/s/frextensions/FRExtensions/g' ./frextensions/build/dokka/html/index.html
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts-${{ github.run_number }}
+          path: |
+            ./frextensions/build/outputs/aar/*.aar
+            ./sample/build/outputs/apk/release/*.apk
+          retention-days: 1
+
+      - name: Archive documents artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: doc-artifacts-${{ github.run_number }}
+          path: ./frextensions/build/dokka/html
+          retention-days: 1

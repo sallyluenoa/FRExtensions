@@ -3,6 +3,7 @@ buildscript {
     ext {
         // App Build Config
         buildConfig = [
+                applicationId: 'frextensions',
                 applicationName: 'FRExtensions',
                 versionName: '0.1.0',
                 versionCode: 1,
