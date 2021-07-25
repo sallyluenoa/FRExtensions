@@ -36,6 +36,7 @@ jobs:
       - name: Build documents with Gradle
         run: |
           # Generate dokka html documents with Gradle.
+          chmod +x gradlew
           ./gradlew dokkaHtml --no-daemon
           # Update docs directory.
           rm -fr ./docs/*
