@@ -1,0 +1,22 @@
+name: sandbox build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v2
+
+      - name: Configure version.
+        id: config_version
+        run: |
+          echo ::set-output name=GLOBAL::$(cat _version.yml | grep -e '^global: \d+\.\d+\.\d+$' | sed -e 's/global: //g')
+
+      - name: Test command.
+        run |
+          echo ${{ steps.config_version.outputs.GLOBAL }}
