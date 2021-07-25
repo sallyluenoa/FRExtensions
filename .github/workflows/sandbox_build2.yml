@@ -20,7 +20,7 @@ jobs:
       - name: Test command.
         run: |
           cat ./_version.yml
-          cat ./_version.yml | grep -e '^global: \d+\.\d+\.\d+$'
+          cat ./_version.yml | grep -e '^global: [0-9]+\.[0-9]+\.[0-9]+$'
           cat ./_version.yml | sed -e 's/global: //g'
-          cat ./_version.yml | grep -e '^global: \d+\.\d+\.\d+$' | sed -e 's/global: //g'
+          cat ./_version.yml | grep -e '^global: [0-9]+\.[0-9]+\.[0-9]+$' | sed -e 's/global: //g'
           echo ${{ steps.config_version.outputs.GLOBAL }}
