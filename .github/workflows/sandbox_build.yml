@@ -34,6 +34,7 @@ jobs:
           STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # Restore keystore.
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > ./sallyluenoa_sample.jks
