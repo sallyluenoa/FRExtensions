@@ -3,7 +3,7 @@ name: sandbox build
 on:
   push:
     branches:
-      - sandbox
+      - master
 
 jobs:
   build:
