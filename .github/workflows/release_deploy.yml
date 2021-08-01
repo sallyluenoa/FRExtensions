@@ -72,6 +72,7 @@ jobs:
         with:
           tag_name: v${{ steps.config_version.outputs.GLOBAL }}
           release_name: Release v${{ steps.config_version.outputs.GLOBAL }}
+          commitish: master
 
       - name: Upload release asset for build
         uses: actions/upload-release-asset@v1
