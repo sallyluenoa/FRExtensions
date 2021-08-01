@@ -3,9 +3,10 @@ buildscript {
     ext {
         // App Build Config
         buildConfig = [
+                applicationId: 'frextensions',
                 applicationName: 'FRExtensions',
-                versionName: '0.1.0',
-                versionCode: 1,
+                versionName: project.findProperty("version.name") ?: '0.0.1-SNAPSHOT',
+                versionCode: project.findProperty("version.code") as Integer ?: 1,
                 compileSdk: 30,
                 targetSdk: 30,
                 minSdk: 21,
