@@ -51,6 +51,7 @@ jobs:
           rm -fr ./docs/*
           cp -r ./frextensions/build/dokka/html/* ./docs
           sed -i -E "/^\s*<h1.*<\/h1>$/s/frextensions/FRExtensions v${{ steps.config_version.outputs.GLOBAL }}/g" ./docs/index.html
+          sed -i -E "s/[0-9]*\.[0-9]*\.[0-9]*/${{ steps.config_version.outputs.GLOBAL }}/g" ./README.md
 
       - name: Archive artifacts
         run: |
@@ -61,7 +62,7 @@ jobs:
       - name: Add commit for update docs
         uses: EndBug/add-and-commit@v7
         with:
-          add: './docs'
+          add: "['./README.md', './docs']"
           message: "[RELEASE DEPLOY v${{ steps.config_version.outputs.GLOBAL }}] Update kdoc."
 
       - name: Create release
@@ -72,6 +73,7 @@ jobs:
         with:
           tag_name: v${{ steps.config_version.outputs.GLOBAL }}
           release_name: Release v${{ steps.config_version.outputs.GLOBAL }}
+          commitish: master
 
       - name: Upload release asset for build
         uses: actions/upload-release-asset@v1
