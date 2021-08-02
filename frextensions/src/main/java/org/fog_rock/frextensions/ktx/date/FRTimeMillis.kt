@@ -1,27 +1,27 @@
 package org.fog_rock.frextensions.ktx.date
 
 /**
- * ミリ秒時間
- * @param millis ミリ秒
+ * An enum class for time millis.
+ * @param millis A time of Milli seconds.
  */
 enum class FRTimeMillis(val millis: Long) {
     /**
-     * 秒
+     * A second
      */
     SECOND(1000L),
 
     /**
-     * 分
+     * A minute
      */
     MINUTE(60 * SECOND.millis),
 
     /**
-     * 時間
+     * An hour
      */
     HOUR(60 * MINUTE.millis),
 
     /**
-     * 日
+     * A day
      */
     DAY(24 * HOUR.millis),
     ;
