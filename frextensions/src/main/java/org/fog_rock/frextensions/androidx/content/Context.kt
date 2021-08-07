@@ -13,7 +13,7 @@ inline fun <reified T> Context.newIntent(): Intent =
     Intent(this, T::class.java)
 
 /**
- * Start an Activity of a specified class.
+ * Start an activity of a specified class.
  * @param bundle An bundle info to the intent, which the default is null.
  * @see Context.startActivity
  */
@@ -24,8 +24,8 @@ inline fun <reified T: Activity> Context.startActivity(bundle: Bundle? = null) {
 }
 
 /**
- * Start an Activity of a specified class.
- * All stacked Activities will be destroyed.
+ * Start an activity of a specified class.
+ * All stacked activities will be destroyed.
  * @param bundle An bundle info to the intent, which the default is null.
  * @see Context.startActivity
  */

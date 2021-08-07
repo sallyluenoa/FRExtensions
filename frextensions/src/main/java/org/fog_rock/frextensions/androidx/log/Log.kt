@@ -3,42 +3,42 @@ package org.fog_rock.frextensions.androidx.log
 import android.util.Log
 
 /**
- * タグ（クラス名）を取得する.
+ * Get a class name as a tag.
  * @see Class.getSimpleName
  */
 val Any.TAG: String get() = this::class.java.simpleName
 
 /**
- * ログ出力する. (LogLevel: VERBOSE)
- * @param message ログ出力するメッセージ
+ * Output a log, the log level is VERBOSE.
+ * @param message A message
  * @see Log.v
  */
 fun Any.logV(message: String) = Log.v(TAG, message)
 
 /**
- * ログ出力する. (LogLevel: DEBUG)
- * @param message ログ出力するメッセージ
+ * Output a log, the log level is DEBUG.
+ * @param message A message
  * @see Log.d
  */
 fun Any.logD(message: String) = Log.d(TAG, message)
 
 /**
- * ログ出力する. (LogLevel: INFO)
- * @param message ログ出力するメッセージ
+ * Output a log, the log level is INFO.
+ * @param message A message
  * @see Log.i
  */
 fun Any.logI(message: String) = Log.i(TAG, message)
 
 /**
- * ログ出力する. (LogLevel: WARNING)
- * @param message ログ出力するメッセージ
+ * Output a log, the log level is WARNING.
+ * @param message A message
  * @see Log.w
  */
 fun Any.logW(message: String) = Log.w(TAG, message)
 
 /**
- * ログ出力する. (LogLevel: ERROR)
- * @param message ログ出力するメッセージ
+ * Output a log, the log level is ERROR.
+ * @param message A message
  * @see Log.e
  */
 fun Any.logE(message: String) = Log.e(TAG, message)

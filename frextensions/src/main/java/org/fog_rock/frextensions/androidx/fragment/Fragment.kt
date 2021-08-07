@@ -3,8 +3,8 @@ package org.fog_rock.frextensions.androidx.fragment
 import androidx.fragment.app.Fragment
 
 /**
- * 親アクティビティにイベントを通知するためのコールバックインターフェースを取得する.
- * @return 親アクティビティにコールバックが実装されていればそれ自体、そうでなければ NULL を返す.
+ * Get a callback interface for a fragment to notify its parent activity of an event.
+ * @return A callback interface if the parent activity implements it, or null otherwise.
  * @see FRFragmentCallback
  */
 inline fun <reified T: FRFragmentCallback> Fragment.activityCallback(): T? =
