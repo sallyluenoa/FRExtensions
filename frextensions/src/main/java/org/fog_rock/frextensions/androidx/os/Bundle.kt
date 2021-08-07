@@ -17,7 +17,7 @@ inline fun <reified T: Serializable> Bundle.getSerialize(key: String): T? =
  * Get a typed array that the type extends a serialization from a bundle.
  * @param key A key
  * @return A typed array that the type extends a serialization if it can be get from a bundle, or null otherwise.
- * @see getSerialize
+ * @see androidx.core.os.bundleOf
  */
 inline fun <reified T: Serializable> Bundle.getSerializeArray(key: String): Array<T>? =
     getSerializable(key).downCastArray()
