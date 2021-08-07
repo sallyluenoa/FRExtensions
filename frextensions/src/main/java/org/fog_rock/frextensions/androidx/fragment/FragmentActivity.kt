@@ -5,28 +5,28 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 
 /**
- * 指定されたリソースIDのビューにフラグメントを追加する.
- * @param fragment 追加するフラグメント
- * @param resId ビューのリソースID
+ * Add a fragment to a view.
+ * @param fragment A fragment
+ * @param resId A resource ID of the view
  */
 fun FragmentActivity.addFragment(fragment: Fragment, @IdRes resId: Int) {
     replaceFragment(fragment, resId, true)
 }
 
 /**
- * 指定されたリソース ID のビューにフラグメントを置換する.
- * @param fragment 追加するフラグメント
- * @param resId ビューのリソース ID
+ * Replace a fragment in a view.
+ * @param fragment A fragment
+ * @param resId A resource ID of the view
  */
 fun FragmentActivity.replaceFragment(fragment: Fragment, @IdRes resId: Int) {
     replaceFragment(fragment, resId, false)
 }
 
 /**
- * 指定されたリソース ID のビューにフラグメントを置換する.
- * @param fragment 追加するフラグメント
- * @param resId ビューのリソース ID
- * @param addStack バックスタックに追加する場合は true
+ * Replace a fragment in a view.
+ * @param fragment A fragment
+ * @param resId A resource ID of the view
+ * @param addStack True to add the fragment to the back stack, or false otherwise.
  */
 private fun FragmentActivity.replaceFragment(fragment: Fragment, @IdRes resId: Int, addStack: Boolean) {
     supportFragmentManager.beginTransaction().apply {

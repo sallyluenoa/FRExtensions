@@ -1,12 +1,12 @@
 package org.fog_rock.frextensions.ktx.date
 
 /**
- * 日付フォーマット形式
- * @param format フォーマット文字列
+ * An enum class for date formats.
+ * @param format A format string
  */
 enum class FRDateFormat(val format: String) {
     /**
-     * ISO8601形式
+     * ISO 8601
      */
     ISO_8601("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"),
 
@@ -26,12 +26,14 @@ enum class FRDateFormat(val format: String) {
     YYYYMMDD_HHMMSS_SSS("yyyy/MM/dd HH:mm:ss.SSS"),
 
     /**
-     * 日本語形式: Year年Month月Day日（曜日）
+     * Year年Month月Day日（曜日）
+     * Note that JP locale is required.
      */
     JP_YYYYMMDDE("yyyy年M月d日（E）"),
 
     /**
-     * 日本語形式: Year年Month月Day日（曜日） Hour時Minute分Second秒
+     * Year年Month月Day日（曜日） Hour時Minute分Second秒
+     * Note that JP locale is required.
      */
     JP_YYYYMMDDE_HHMMSS("yyyy年M月d日（E）H時m分s秒"),
     ;
