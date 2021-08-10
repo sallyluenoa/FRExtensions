@@ -7,16 +7,17 @@ buildscript {
                 applicationName: 'FRExtensions',
                 versionName: project.findProperty("version.name") ?: '0.0.1-SNAPSHOT',
                 versionCode: project.findProperty("version.code") as Integer ?: 1,
+                buildTools: "30.0.2",
                 compileSdk: 30,
                 targetSdk: 30,
                 minSdk: 21,
         ]
         // Library Versions
         versions = [
-                // Android Studio
-                androidStudio: '4.2.1',
+                // @see https://developer.android.com/studio/releases/gradle-plugin
+                androidGradle: '7.0.0',
                 // @see https://kotlinlang.org/
-                kotlin: '1.5.10',
+                kotlin: '1.5.21',
                 // @see https://github.com/Kotlin/dokka
                 dokka: '1.4.32',
                 // @see https://developer.android.com/jetpack/androidx/versions
@@ -42,7 +43,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:$versions.androidStudio"
+        classpath "com.android.tools.build:gradle:$versions.androidGradle"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:$versions.dokka"
     }
