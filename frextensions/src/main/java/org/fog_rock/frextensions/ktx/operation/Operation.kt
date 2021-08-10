@@ -6,7 +6,7 @@ package org.fog_rock.frextensions.ktx.operation
  * If there is only one valid value, the result is the value itself.
  * If all values are null or no value, the result is null.
  * @param flags Variable number of boolean values
- * @return A result of logical `and` operations, or Null if all values are null or no value.
+ * @return A result of logical `and` operations, or null if all values are null or no value.
  */
 fun andAll(vararg flags: Boolean?): Boolean? {
     var ret: Boolean? = null
@@ -22,7 +22,7 @@ fun andAll(vararg flags: Boolean?): Boolean? {
  * If there is only one valid value, the result is the value itself.
  * If all values are null or no value, the result is null.
  * @param flags Variable number of boolean values
- * @return A result of logical `or` operations, or Null if all values are null or no value.
+ * @return A result of logical `or` operations, or null if all values are null or no value.
  */
 fun orAll(vararg flags: Boolean?): Boolean? {
     var ret: Boolean? = null
@@ -38,7 +38,7 @@ fun orAll(vararg flags: Boolean?): Boolean? {
  * If there is only one valid value, the result is the value itself.
  * If all values are null or no value, the result is null.
  * @param flags Variable number of boolean values
- * @return A result of logical `xor` operations, or Null if all values are null or no value.
+ * @return A result of logical `xor` operations, or null if all values are null or no value.
  */
 fun xorAll(vararg flags: Boolean?): Boolean? {
     var ret: Boolean? = null
