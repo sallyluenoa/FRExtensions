@@ -1,6 +1,6 @@
 # FRExtensions
 
-FRExtensions is a library of additional extensions for Kotlin Android.
+[FRExtensions](https://sallyluenoa.github.io/FRExtensions/index.html) is a library of additional extensions for Kotlin Android.
 
 ## How to Install
 
@@ -8,10 +8,10 @@ FRExtensions is a library of additional extensions for Kotlin Android.
 
 You should create a GitHub personal access token to read the GitHub packages in your Android project.
 
-- Open your personal GitHub account.
-- Settings -> Developer Settings -> Personal access tokens -> Generate new token
-- Generate a new token. Scopes would be selected "read:packages" only.
-- You should keep the created token.
+1. Open your personal GitHub account.
+1. Settings -> Developer Settings -> Personal access tokens -> Generate new token
+1. Generate a new token. Scopes would be selected "read:packages" only.
+1. You should keep the created token.
 
 ### Install your Android Project with Gradle
 

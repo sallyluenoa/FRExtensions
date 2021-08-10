@@ -3,14 +3,15 @@ package org.fog_rock.frextensions.androidx.fragment
 import androidx.fragment.app.Fragment
 
 /**
- * フラグメントが親アクティビティにイベントを通知するためのコールバックインターフェース.
- * @see activityCallback
+ * A callback interface for a fragment to notify its parent activity of an event.
+ * @see org.fog_rock.frextensions.androidx.fragment.activityCallback
  */
 interface FRFragmentCallback {
     /**
-     * フラグメントのビューが生成されたことを通知する.
-     * @param tag タグ
+     * Notify that a fragment view is created.
+     * @param tag A class tag
      * @see Fragment.onCreateView
+     * @see org.fog_rock.frextensions.androidx.log.TAG
      */
     fun onCreateFragmentView(tag: String)
 }

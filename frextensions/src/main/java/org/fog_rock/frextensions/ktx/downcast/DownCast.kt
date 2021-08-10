@@ -1,8 +1,8 @@
 package org.fog_rock.frextensions.ktx.downcast
 
 /**
- * 配列を安全にダウンキャストする.
- * @return オブジェクトが該当タイプの配列を継承しているならばダウンキャスト後の配列、不可ならば NULL
+ * Downcast any objects to a specified typed array safely.
+ * @return A typed array if the object inherits the specified array type, or null otherwise.
  */
 inline fun <reified T> Any?.downCastArray(): Array<T>? {
     val tmp = this as? Array<*> ?: return null
@@ -15,8 +15,8 @@ inline fun <reified T> Any?.downCastArray(): Array<T>? {
 }
 
 /**
- * リストを安全にダウンキャストする.
- * @return オブジェクトが該当タイプのリストを継承しているならばダウンキャスト後のリスト、不可ならば NULL
+ * Downcast any objects to a specified typed list safely.
+ * @return A typed list if the object inherits the specified list type, or null otherwise.
  */
 inline fun <reified E> Any?.downCastList(): List<E>? {
     val tmp = this as? List<*> ?: return null
@@ -29,8 +29,8 @@ inline fun <reified E> Any?.downCastList(): List<E>? {
 }
 
 /**
- * セットを安全にダウンキャストする.
- * @return オブジェクトが該当タイプのセットを継承しているならばダウンキャスト後のセット、不可ならば NULL
+ * Downcast any objects to a specified typed set safely.
+ * @return A typed set if the object inherits the specified set type, or null otherwise.
  */
 inline fun <reified E> Any?.downCastSet(): Set<E>? {
     val tmp = this as? Set<*> ?: return null
@@ -43,8 +43,8 @@ inline fun <reified E> Any?.downCastSet(): Set<E>? {
 }
 
 /**
- * マップを安全にダウンキャストする.
- * @return オブジェクトが該当タイプのマップを継承しているならばダウンキャスト後のマップ、不可ならば NULL
+ * Downcast any objects to a specified typed map safely.
+ * @return A typed map if the object inherits the specified map type, or null otherwise.
  */
 inline fun <reified K, reified V> Any?.downCastMap(): Map<K, V>? {
     val tmp = this as? Map<*, *> ?: return null

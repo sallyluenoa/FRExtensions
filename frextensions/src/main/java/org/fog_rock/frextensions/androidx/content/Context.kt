@@ -6,15 +6,15 @@ import android.content.Intent
 import android.os.Bundle
 
 /**
- * クラスインテントを生成する.
- * @return Intent クラスインテント
+ * Generate a new class intent.
+ * @return A class intent
  */
 inline fun <reified T> Context.newIntent(): Intent =
     Intent(this, T::class.java)
 
 /**
- * アクティビティを起動する.
- * @param bundle インテントへの付加情報、未指定の場合 NULL
+ * Start an activity of a specified class.
+ * @param bundle An bundle info to the intent, which the default is null.
  * @see Context.startActivity
  */
 inline fun <reified T: Activity> Context.startActivity(bundle: Bundle? = null) {
@@ -24,9 +24,9 @@ inline fun <reified T: Activity> Context.startActivity(bundle: Bundle? = null) {
 }
 
 /**
- * アクティビティを起動する.
- * スタックされたアクティビティはすべて破棄される.
- * @param bundle インテントへの付加情報、未指定の場合 NULL
+ * Start an activity of a specified class.
+ * All stacked activities will be destroyed.
+ * @param bundle An bundle info to the intent, which the default is null.
  * @see Context.startActivity
  */
 inline fun <reified T: Activity> Context.startActivityAndFinishAll(bundle: Bundle? = null) {
