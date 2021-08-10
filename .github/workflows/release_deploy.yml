@@ -63,7 +63,7 @@ jobs:
         uses: EndBug/add-and-commit@v7
         with:
           add: "['./README.md', './docs']"
-          message: "[RELEASE DEPLOY v${{ steps.config_version.outputs.GLOBAL }}] Update kdoc."
+          message: "[RELEASE DEPLOY v${{ steps.config_version.outputs.GLOBAL }}] Update README.md and KDoc."
 
       - name: Create release
         id: create_release
