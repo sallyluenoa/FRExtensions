@@ -76,10 +76,28 @@ $dokka.location:org.fog_rock.frextensions.ktx.downcast//downCastArray/kotlin.Any
 $dokka.location:org.fog_rock.frextensions.ktx.downcast//downCastList/kotlin.Any?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.downcast/down-cast-list.html
 $dokka.location:org.fog_rock.frextensions.ktx.downcast//downCastMap/kotlin.Any?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.downcast/down-cast-map.html
 $dokka.location:org.fog_rock.frextensions.ktx.downcast//downCastSet/kotlin.Any?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.downcast/down-cast-set.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull////PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/TypeParam(bounds=[kotlin.Any?])?#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/kotlin.Array[TypeParam(bounds=[kotlin.Any?])]?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/kotlin.Boolean?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/kotlin.Double?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/kotlin.Float?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/kotlin.Int?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/kotlin.Long?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/kotlin.String?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/kotlin.collections.List[TypeParam(bounds=[kotlin.Any?])]?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/kotlin.collections.Map[TypeParam(bounds=[kotlin.Any?]),TypeParam(bounds=[kotlin.Any?])]?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/kotlin.collections.Set[TypeParam(bounds=[kotlin.Any?])]?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.operation////PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.operation/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.operation//andAll/#kotlin.Array[kotlin.Boolean?]/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.operation/and-all.html
+$dokka.location:org.fog_rock.frextensions.ktx.operation//orAll/#kotlin.Array[kotlin.Boolean?]/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.operation/or-all.html
+$dokka.location:org.fog_rock.frextensions.ktx.operation//xorAll/#kotlin.Array[kotlin.Boolean?]/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.operation/xor-all.html
 org.fog_rock.frextensions.androidx.content
 org.fog_rock.frextensions.androidx.fragment
 org.fog_rock.frextensions.androidx.log
 org.fog_rock.frextensions.androidx.os
 org.fog_rock.frextensions.ktx.date
 org.fog_rock.frextensions.ktx.downcast
+org.fog_rock.frextensions.ktx.nonnull
+org.fog_rock.frextensions.ktx.operation
 
