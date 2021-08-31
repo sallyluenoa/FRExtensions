@@ -48,7 +48,7 @@ The library will be installed in your project.
 
 ## Releases
 
-See [GitHub Releases](https://github.com/sallyluenoa/FRExtensions/releases).
+Please read [GitHub Releases](https://github.com/sallyluenoa/FRExtensions/releases).
 
 ## Documents
 
@@ -58,3 +58,7 @@ Old versions are available from Assets of the past releases.
 ## License
 
 This license is [Apache License 2.0](./LICENSE.txt).
+
+## For Developers
+
+Please read [developer's memo](./developers.md).
