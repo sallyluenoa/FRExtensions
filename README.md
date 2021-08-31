@@ -40,7 +40,7 @@ allprojects {
 Open build.gradle of the module and add the following dependency.
 
 ```Gradle
-implementation 'org.fog-rock.frextensions:frextensions:1.0.0'
+implementation 'org.fog-rock.frextensions:frextensions:1.0.1'
 ```
 
 Then sync your project with Gradle.  
