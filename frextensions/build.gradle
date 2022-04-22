@@ -59,7 +59,7 @@ publishing {
 
 dependencies {
     // main
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.jetbrains.kotlin"
     implementation "androidx.appcompat:appcompat:$versions.androidx.appcompat"
     implementation "androidx.core:core-ktx:$versions.androidx.core"
     // test
