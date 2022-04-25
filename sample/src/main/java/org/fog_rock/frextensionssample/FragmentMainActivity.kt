@@ -19,13 +19,14 @@ class FragmentMainActivity : AppCompatActivity() {
 
         binding.buttonTestAddFragment.setOnClickListener {
             logI("Clicked Test addFragment.")
-            addFragment(SubFragment(), R.id.fragment_container)
+            val count = supportFragmentManager.backStackEntryCount + 1
+            addFragment(SubFragment.newInstance(count), R.id.fragment_container)
         }
         binding.buttonTestReplaceFragment.setOnClickListener {
             logI("Clicked Test replaceFragment.")
-            replaceFragment(SubFragment(), R.id.fragment_container)
+            replaceFragment(SubFragment.newInstance(), R.id.fragment_container)
         }
 
-        replaceFragment(MainFragment(), R.id.fragment_container)
+        replaceFragment(MainFragment.newInstance(), R.id.fragment_container)
     }
 }

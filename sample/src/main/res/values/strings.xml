@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">FRExtensionsSample</string>
+    <string name="empty" />
+
+    <string name="hint_editText_message">putExtra Message</string>
+    <string name="label_button_test_startActivity">Test startActivity</string>
+    <string name="label_button_test_startActivityAndFinishAll">Test startActivityAndFinishAll</string>
+    <string name="label_button_show_fragmentMainActivity">Show FragmentMainActivity</string>
+    <string name="label_button_test_addFragment">Test addFragment</string>
+    <string name="label_button_test_replaceFragment">Test replaceFragment</string>
+    <string name="label_textView_mainFragment">MainFragment %1$d</string>
+    <string name="label_textView_subFragment">SubFragment %1$d</string>
+
 </resources>

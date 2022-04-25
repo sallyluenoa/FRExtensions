@@ -18,6 +18,7 @@ class SubActivity : AppCompatActivity() {
         binding = ActivitySubBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.textViewMessage.text = intent.getStringExtra(ARGS_MESSAGE) ?: ""
+        binding.textViewMessage.text =
+            intent.getStringExtra(ARGS_MESSAGE) ?: getString(R.string.empty)
     }
 }

@@ -18,9 +18,6 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class ActivityTest {
 
-    private val textMessage = "Hello World!"
-    private val emptyMessage = ""
-
     @get:Rule val activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
     @Before fun before() {
@@ -32,7 +29,7 @@ class ActivityTest {
     }
 
     /**
-     * Context.startActivity(): Bundleなし
+     * Context.startActivity(): Without Bundle.
      */
     @Test fun startActivity_withoutBundle() {
         // Perform view actions.
@@ -45,30 +42,30 @@ class ActivityTest {
         }
         // Check views.
         Espresso.onView(ViewMatchers.withId(R.id.textView_message))
-            .check(ViewAssertions.matches(ViewMatchers.withText(emptyMessage)))
+            .check(ViewAssertions.matches(ViewMatchers.withText("")))
     }
 
     /**
-     * Context.startActivity(): Bundleあり
+     * Context.startActivity(): With Bundle.
      */
     @Test fun startActivity_withBundle() {
         // Perform view actions.
-        Espresso.onView(ViewMatchers.withId(R.id.editText_putExtra_message))
-                .perform(ViewActions.replaceText(textMessage))
+        Espresso.onView(ViewMatchers.withId(R.id.editText_message))
+                .perform(ViewActions.replaceText("startActivity"))
         Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivity))
                 .perform(ViewActions.click())
         // Check intent.
         IntentSubject.assertThat(Intents.getIntents().first()).apply {
             hasComponentClass(SubActivity::class.java.name)
-            extras().string(SubActivity.ARGS_MESSAGE).isEqualTo(textMessage)
+            extras().string(SubActivity.ARGS_MESSAGE).isEqualTo("startActivity")
         }
         // Check views.
         Espresso.onView(ViewMatchers.withId(R.id.textView_message))
-            .check(ViewAssertions.matches(ViewMatchers.withText(textMessage)))
+            .check(ViewAssertions.matches(ViewMatchers.withText("startActivity")))
     }
 
     /**
-     * Context.startActivity(): 別のActivity表示
+     * Context.startActivity(): Show other Activity.
      */
     @Test fun startActivity_otherActivity() {
         // Perform view actions.
@@ -81,7 +78,7 @@ class ActivityTest {
     }
 
     /**
-     * Context.startActivityAndFinishAll(): Bundleなし
+     * Context.startActivityAndFinishAll(): Without Bundle.
      */
     @Test fun startActivityAndFinishAll_withoutBundle() {
         // Perform view actions.
@@ -96,16 +93,16 @@ class ActivityTest {
         }
         // Check views.
         Espresso.onView(ViewMatchers.withId(R.id.textView_message))
-            .check(ViewAssertions.matches(ViewMatchers.withText(emptyMessage)))
+            .check(ViewAssertions.matches(ViewMatchers.withText("")))
     }
 
     /**
-     * Context.startActivityAndFinishAll(): Bundleあり
+     * Context.startActivityAndFinishAll(): With Bundle.
      */
     @Test fun startActivityAndFinishAll_withBundle() {
         // Perform view actions.
-        Espresso.onView(ViewMatchers.withId(R.id.editText_putExtra_message))
-            .perform(ViewActions.replaceText(textMessage))
+        Espresso.onView(ViewMatchers.withId(R.id.editText_message))
+            .perform(ViewActions.replaceText("startActivityAndFinishAll"))
         Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivityAndFinishAll))
             .perform(ViewActions.click())
         // Check intent.
@@ -113,10 +110,10 @@ class ActivityTest {
             hasComponentClass(SubActivity::class.java.name)
             hasFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             hasFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
-            extras().string(SubActivity.ARGS_MESSAGE).isEqualTo(textMessage)
+            extras().string(SubActivity.ARGS_MESSAGE).isEqualTo("startActivityAndFinishAll")
         }
         // Check views.
         Espresso.onView(ViewMatchers.withId(R.id.textView_message))
-            .check(ViewAssertions.matches(ViewMatchers.withText(textMessage)))
+            .check(ViewAssertions.matches(ViewMatchers.withText("startActivityAndFinishAll")))
     }
 }
