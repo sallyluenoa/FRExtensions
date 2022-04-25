@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.buttonTestStartActivity.setOnClickListener {
             logI("Clicked Test startActivity.")
-            val message = binding.editTextPutExtraMessage.text.toString()
+            val message = binding.textInputEditTextMessage.text.toString()
             if (message.isEmpty()) {
                 logI("startActivity without message.")
                 startActivity<SubActivity>()
@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         }
         binding.buttonTestStartActivityAndFinishAll.setOnClickListener {
             logI("Clicked Test startActivityAndFinishAll.")
-            val message = binding.editTextPutExtraMessage.text.toString()
+            val message = binding.textInputEditTextMessage.text.toString()
             if (message.isEmpty()) {
                 logI("startActivityAndFinishAll without message.")
                 startActivityAndFinishAll<SubActivity>()
