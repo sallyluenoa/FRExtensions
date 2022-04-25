@@ -8,7 +8,7 @@
     tools:context=".SubActivity">
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/materialTextView_message"
+        android:id="@+id/textView_message"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text="@string/empty"
