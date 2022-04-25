@@ -4,12 +4,11 @@ import androidx.test.espresso.Espresso
 import androidx.test.espresso.NoActivityResumedException
 import androidx.test.espresso.action.ViewActions
 import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import org.junit.Assert
-import org.junit.Rule
-import org.junit.Test
+import org.junit.*
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
@@ -17,13 +16,21 @@ class FragmentTest {
 
     @get:Rule val activityScenarioRule = ActivityScenarioRule(FragmentMainActivity::class.java)
 
+    @Before fun before() {
+        Intents.init()
+    }
+
+    @After fun after() {
+        Intents.release()
+    }
+
     /**
-     * デフォルト状態のチェック
+     * Check default state.
      */
-    @Test fun defaultView() {
+    @Test fun defaultState() {
         // Check views.
-        Espresso.onView(ViewMatchers.withId(R.id.textView_className))
-            .check(ViewAssertions.matches(ViewMatchers.withText("MainActivity")))
+        Espresso.onView(ViewMatchers.withId(R.id.textView_message))
+            .check(ViewAssertions.matches(ViewMatchers.withText("MainFragment 0")))
         // Press back.
         try {
             Espresso.pressBack()
@@ -34,32 +41,90 @@ class FragmentTest {
     }
 
     /**
-     * FragmentActivity.addFragment()
+     * FragmentActivity.addFragment(): Click once.
      */
-    @Test fun addFragment() {
+    @Test fun addFragment_once() {
         // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.button_test_addFragment))
             .perform(ViewActions.click())
         // Check views.
-        Espresso.onView(ViewMatchers.withId(R.id.textView_className))
-            .check(ViewAssertions.matches(ViewMatchers.withText("SubActivity")))
+        Espresso.onView(ViewMatchers.withId(R.id.textView_message))
+            .check(ViewAssertions.matches(ViewMatchers.withText("SubFragment 1")))
         // Press back.
         Espresso.pressBack()
         // Check views.
-        Espresso.onView(ViewMatchers.withId(R.id.textView_className))
-            .check(ViewAssertions.matches(ViewMatchers.withText("MainActivity")))
+        Espresso.onView(ViewMatchers.withId(R.id.textView_message))
+            .check(ViewAssertions.matches(ViewMatchers.withText("MainFragment 0")))
+        // Press back.
+        try {
+            Espresso.pressBack()
+            Assert.fail("Should have thrown NoActivityResumedException.")
+        } catch (e: NoActivityResumedException) {
+            activityScenarioRule.scenario.close()
+        }
     }
 
     /**
-     * FragmentActivity.replaceFragment()
+     * FragmentActivity.addFragment(): Click several times.
      */
-    @Test fun replaceFragment() {
+    @Test fun addFragment_severalTimes() {
+        for (i in 1..3) {
+            // Perform view actions.
+            Espresso.onView(ViewMatchers.withId(R.id.button_test_addFragment))
+                .perform(ViewActions.click())
+            // Check views.
+            Espresso.onView(ViewMatchers.withId(R.id.textView_message))
+                .check(ViewAssertions.matches(ViewMatchers.withText("SubFragment $i")))
+        }
+        for (i in 2 downTo 0) {
+            // Press back.
+            Espresso.pressBack()
+            // Check views.
+            Espresso.onView(ViewMatchers.withId(R.id.textView_message))
+                .check(ViewAssertions.matches(ViewMatchers.withText(
+                    if (i > 0) "SubFragment $i" else "MainFragment 0"
+                )))
+        }
+        // Press back.
+        try {
+            Espresso.pressBack()
+            Assert.fail("Should have thrown NoActivityResumedException.")
+        } catch (e: NoActivityResumedException) {
+            activityScenarioRule.scenario.close()
+        }
+    }
+
+    /**
+     * FragmentActivity.replaceFragment(): Click once.
+     */
+    @Test fun replaceFragment_once() {
         // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.button_test_replaceFragment))
             .perform(ViewActions.click())
         // Check views.
-        Espresso.onView(ViewMatchers.withId(R.id.textView_className))
-            .check(ViewAssertions.matches(ViewMatchers.withText("SubActivity")))
+        Espresso.onView(ViewMatchers.withId(R.id.textView_message))
+            .check(ViewAssertions.matches(ViewMatchers.withText("SubFragment 0")))
+        // Press back.
+        try {
+            Espresso.pressBack()
+            Assert.fail("Should have thrown NoActivityResumedException.")
+        } catch (e: NoActivityResumedException) {
+            activityScenarioRule.scenario.close()
+        }
+    }
+
+    /**
+     * FragmentActivity.replaceFragment(): Click several times.
+     */
+    @Test fun replaceFragment_severalTimes() {
+        for (i in 1..3) {
+            // Perform view actions.
+            Espresso.onView(ViewMatchers.withId(R.id.button_test_replaceFragment))
+                .perform(ViewActions.click())
+            // Check views.
+            Espresso.onView(ViewMatchers.withId(R.id.textView_message))
+                .check(ViewAssertions.matches(ViewMatchers.withText("SubFragment 0")))
+        }
         // Press back.
         try {
             Espresso.pressBack()
