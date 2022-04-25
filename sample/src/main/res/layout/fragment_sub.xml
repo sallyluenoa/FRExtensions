@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     android:background="@color/honeydew" >
 
-    <TextView
-        android:id="@+id/textView_className"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textView_message"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="SubActivity"
+        android:text="@string/label_textView_subFragment"
         android:textSize="20sp"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
