@@ -24,48 +24,18 @@ $dokka.location:org.fog_rock.frextensions.ktx.date//toDateString/kotlin.Long#kot
 $dokka.location:org.fog_rock.frextensions.ktx.date//toDefaultDateString/kotlin.Long#kotlin.String#java.util.Locale/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/to-default-date-string.html
 $dokka.location:org.fog_rock.frextensions.ktx.date//toUtcDateString/kotlin.Long#kotlin.String/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/to-utc-date-string.html
 $dokka.location:org.fog_rock.frextensions.ktx.date//utcToDate/kotlin.String#kotlin.String/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/utc-to-date.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.ISO_8601///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-i-s-o_8601/index.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.ISO_8601/format/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-i-s-o_8601/format.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.ISO_8601/name/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-i-s-o_8601/name.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.ISO_8601/ordinal/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-i-s-o_8601/ordinal.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.JP_YYYYMMDDE///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-j-p_-y-y-y-y-m-m-d-d-e/index.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.JP_YYYYMMDDE/format/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-j-p_-y-y-y-y-m-m-d-d-e/format.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.JP_YYYYMMDDE/name/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-j-p_-y-y-y-y-m-m-d-d-e/name.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.JP_YYYYMMDDE/ordinal/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-j-p_-y-y-y-y-m-m-d-d-e/ordinal.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.JP_YYYYMMDDE_HHMMSS///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-j-p_-y-y-y-y-m-m-d-d-e_-h-h-m-m-s-s/index.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.JP_YYYYMMDDE_HHMMSS/format/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-j-p_-y-y-y-y-m-m-d-d-e_-h-h-m-m-s-s/format.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.JP_YYYYMMDDE_HHMMSS/name/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-j-p_-y-y-y-y-m-m-d-d-e_-h-h-m-m-s-s/name.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.JP_YYYYMMDDE_HHMMSS/ordinal/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-j-p_-y-y-y-y-m-m-d-d-e_-h-h-m-m-s-s/ordinal.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d/index.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD/format/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d/format.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD/name/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d/name.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD/ordinal/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d/ordinal.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d_-h-h-m-m-s-s/index.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS/format/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d_-h-h-m-m-s-s/format.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS/name/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d_-h-h-m-m-s-s/name.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS/ordinal/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d_-h-h-m-m-s-s/ordinal.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS_SSS///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d_-h-h-m-m-s-s_-s-s-s/index.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS_SSS/format/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d_-h-h-m-m-s-s_-s-s-s/format.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS_SSS/name/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d_-h-h-m-m-s-s_-s-s-s/name.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS_SSS/ordinal/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d_-h-h-m-m-s-s_-s-s-s/ordinal.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.ISO_8601///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-i-s-o_8601/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.JP_YYYYMMDDE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-j-p_-y-y-y-y-m-m-d-d-e/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.JP_YYYYMMDDE_HHMMSS///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-j-p_-y-y-y-y-m-m-d-d-e_-h-h-m-m-s-s/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d_-h-h-m-m-s-s/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS_SSS///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d_-h-h-m-m-s-s_-s-s-s/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat/format/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/format.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.DAY///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-d-a-y/index.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.DAY/millis/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-d-a-y/millis.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.DAY/name/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-d-a-y/name.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.DAY/ordinal/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-d-a-y/ordinal.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.HOUR///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-h-o-u-r/index.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.HOUR/millis/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-h-o-u-r/millis.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.HOUR/name/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-h-o-u-r/name.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.HOUR/ordinal/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-h-o-u-r/ordinal.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.MINUTE///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-m-i-n-u-t-e/index.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.MINUTE/millis/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-m-i-n-u-t-e/millis.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.MINUTE/name/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-m-i-n-u-t-e/name.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.MINUTE/ordinal/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-m-i-n-u-t-e/ordinal.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.SECOND///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-s-e-c-o-n-d/index.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.SECOND/millis/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-s-e-c-o-n-d/millis.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.SECOND/name/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-s-e-c-o-n-d/name.html
-$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.SECOND/ordinal/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-s-e-c-o-n-d/ordinal.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.DAY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-d-a-y/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.HOUR///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-h-o-u-r/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.MINUTE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-m-i-n-u-t-e/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.SECOND///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-s-e-c-o-n-d/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis/millis/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/millis.html
 $dokka.location:org.fog_rock.frextensions.ktx.downcast////PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.downcast/index.html
@@ -73,6 +43,11 @@ $dokka.location:org.fog_rock.frextensions.ktx.downcast//downCastArray/kotlin.Any
 $dokka.location:org.fog_rock.frextensions.ktx.downcast//downCastList/kotlin.Any?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.downcast/down-cast-list.html
 $dokka.location:org.fog_rock.frextensions.ktx.downcast//downCastMap/kotlin.Any?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.downcast/down-cast-map.html
 $dokka.location:org.fog_rock.frextensions.ktx.downcast//downCastSet/kotlin.Any?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.downcast/down-cast-set.html
+$dokka.location:org.fog_rock.frextensions.ktx.enum////PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.enum/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.enum//valueOf/#TypeParam(bounds=[kotlin.Any?])#TypeParam(bounds=[kotlin.Enum[^], org.fog_rock.frextensions.ktx.enum.FRBaseEnum[TypeParam(bounds=[kotlin.Any?])]])/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.enum/value-of.html
+$dokka.location:org.fog_rock.frextensions.ktx.enum//valueOfOrNull/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.enum/value-of-or-null.html
+$dokka.location:org.fog_rock.frextensions.ktx.enum/FRBaseEnum///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.enum/-f-r-base-enum/index.html
+$dokka.location:org.fog_rock.frextensions.ktx.enum/FRBaseEnum/value/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.enum/-f-r-base-enum/value.html
 $dokka.location:org.fog_rock.frextensions.ktx.nonnull////PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/TypeParam(bounds=[kotlin.Any?])?#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
 $dokka.location:org.fog_rock.frextensions.ktx.nonnull//toNonNull/kotlin.Array[TypeParam(bounds=[kotlin.Any?])]?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.nonnull/to-non-null.html
@@ -95,6 +70,7 @@ org.fog_rock.frextensions.androidx.log
 org.fog_rock.frextensions.androidx.os
 org.fog_rock.frextensions.ktx.date
 org.fog_rock.frextensions.ktx.downcast
+org.fog_rock.frextensions.ktx.enum
 org.fog_rock.frextensions.ktx.nonnull
 org.fog_rock.frextensions.ktx.operation
 
