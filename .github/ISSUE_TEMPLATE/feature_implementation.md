@@ -1,9 +1,9 @@
 ---
 name: Feature Implementation
-about: New feature or request
+about: Request or suggest new feature
 title: '[Feature implementation]'
 labels: 'enhancement'
-assignees: ''
+assignees: 'sallyluenoa'
 
 ---
 
@@ -11,6 +11,9 @@ assignees: ''
 * 
 
 ### How to Approach
+* 
+
+### Comments
 * 
 
 ### References or Related Issues

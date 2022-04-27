@@ -1,9 +1,9 @@
 ---
-name: Maintanance
+name: Maintenance
 about: Maintain the project
 title: '[Maintenance]'
 labels: ''
-assignees: ''
+assignees: 'sallyluenoa'
 
 ---
 
@@ -11,6 +11,9 @@ assignees: ''
 * 
 
 ### How to Approach
+* 
+
+### Comments
 * 
 
 ### References or Related Issues
