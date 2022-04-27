@@ -61,4 +61,4 @@ This license is [Apache License 2.0](./LICENSE.txt).
 
 ## For Developers
 
-Please read [developer's memo](./developers.md).
+Please read [Memos for Developers](./developers.md).

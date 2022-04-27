@@ -1,10 +1,10 @@
-# Developer's Memo
+# Memos for Developers
 
 ## For All Developers
 
 ### Development Tools
 
-Android Studio Arctic Fox | 2020.3.1
+Android Studio Bumblebee &#124; 2021.1.1
 
 ### How to Build
 

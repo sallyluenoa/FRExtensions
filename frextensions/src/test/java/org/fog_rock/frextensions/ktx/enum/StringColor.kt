@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2021 SallyLueNoa
+ * Copyright (c) 2022 SallyLueNoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,14 @@
  * limitations under the License.
  */
 
-package org.fog_rock.frextensions.ktx.date
+package org.fog_rock.frextensions.ktx.enum
 
-import java.util.*
+enum class StringColor(override val value: String) : FRBaseEnum<String> {
 
-open class DateTest {
+    RED("#FF0000"),
 
-    // 2021/06/01 04:23:57.558 JST
-    // 2021/05/31 19:23:57.558 UTC
-    protected val dateLong = 1622489037558L
-    protected val date = Date(dateLong)
+    GREEN("#008000"),
 
-    // Cutoff milli seconds.
-    protected val dateLongCutMillis = 1622489037000L
-    protected val dateCutMillis = Date(dateLongCutMillis)
-
+    BLUE("#0000FF"),
+    ;
 }
