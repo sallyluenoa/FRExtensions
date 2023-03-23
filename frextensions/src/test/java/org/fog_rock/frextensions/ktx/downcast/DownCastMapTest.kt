@@ -20,7 +20,7 @@ import com.google.common.truth.Truth
 import org.junit.Test
 
 /**
- * @see downCastMap
+ * @see org.fog_rock.frextensions.ktx.downcast.downCastMap
  */
 class DownCastMapTest : DownCastTest() {
 

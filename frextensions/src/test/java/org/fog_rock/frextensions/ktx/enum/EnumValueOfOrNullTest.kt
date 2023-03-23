@@ -20,7 +20,7 @@ import com.google.common.truth.Truth
 import org.junit.Test
 
 /**
- * @see valueOfOrNull
+ * @see org.fog_rock.frextensions.ktx.enum.valueOfOrNull
  */
 class EnumValueOfOrNullTest {
 

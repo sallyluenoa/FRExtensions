@@ -21,9 +21,9 @@ import org.junit.Test
 import java.util.*
 
 /**
- * @see defaultToDate
- * @see utcToDate
- * @see toDate
+ * @see org.fog_rock.frextensions.ktx.date.defaultToDate
+ * @see org.fog_rock.frextensions.ktx.date.utcToDate
+ * @see org.fog_rock.frextensions.ktx.date.toDate
  */
 class StringToDateTest : DateTest() {
 

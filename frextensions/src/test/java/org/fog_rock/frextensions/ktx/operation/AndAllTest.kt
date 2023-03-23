@@ -20,7 +20,7 @@ import com.google.common.truth.Truth
 import org.junit.Test
 
 /**
- * @see andAll
+ * @see org.fog_rock.frextensions.ktx.operation.andAll
  */
 class AndAllTest {
 

@@ -31,7 +31,7 @@ inline fun <reified T> Context.newIntent(): Intent =
 /**
  * Start an activity of a specified class.
  * @param bundle An bundle info to the intent, which the default is null.
- * @see Context.startActivity
+ * @see android.content.Context.startActivity
  */
 inline fun <reified T: Activity> Context.startActivity(bundle: Bundle? = null) {
     startActivity(newIntent<T>().apply {
@@ -43,7 +43,7 @@ inline fun <reified T: Activity> Context.startActivity(bundle: Bundle? = null) {
  * Start an activity of a specified class.
  * All stacked activities will be destroyed.
  * @param bundle An bundle info to the intent, which the default is null.
- * @see Context.startActivity
+ * @see android.content.Context.startActivity
  */
 inline fun <reified T: Activity> Context.startActivityAndFinishAll(bundle: Bundle? = null) {
     startActivity(newIntent<T>().apply {

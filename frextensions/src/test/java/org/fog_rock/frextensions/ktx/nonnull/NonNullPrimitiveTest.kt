@@ -19,6 +19,9 @@ package org.fog_rock.frextensions.ktx.nonnull
 import com.google.common.truth.Truth
 import org.junit.Test
 
+/**
+ * @see org.fog_rock.frextensions.ktx.nonnull.toNonNull
+ */
 class NonNullPrimitiveTest {
 
     private var boolean: Boolean? = null

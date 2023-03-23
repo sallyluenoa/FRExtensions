@@ -22,7 +22,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 /**
- * @see getSerialize
+ * @see org.fog_rock.frextensions.androidx.os.getSerialize
  */
 @RunWith(AndroidJUnit4::class)
 class BundleSerializeTest : BundleTest() {

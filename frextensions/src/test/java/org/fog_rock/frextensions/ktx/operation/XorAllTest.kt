@@ -20,7 +20,7 @@ import com.google.common.truth.Truth
 import org.junit.Test
 
 /**
- * @see xorAll
+ * @see org.fog_rock.frextensions.ktx.operation.xorAll
  */
 class XorAllTest {
 

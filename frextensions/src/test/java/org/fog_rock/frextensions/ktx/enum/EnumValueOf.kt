@@ -20,7 +20,7 @@ import com.google.common.truth.Truth
 import org.junit.Test
 
 /**
- * @see valueOf
+ * @see org.fog_rock.frextensions.ktx.enum.valueOf
  */
 class EnumValueOf {
 
