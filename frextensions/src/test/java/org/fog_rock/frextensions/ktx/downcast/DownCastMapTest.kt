@@ -25,7 +25,7 @@ import org.junit.Test
 class DownCastMapTest : DownCastTest() {
 
     /**
-     * 正常系
+     * Normal case
      */
     @Test
     fun downCastMap_ok() {
@@ -39,7 +39,7 @@ class DownCastMapTest : DownCastTest() {
     }
 
     /**
-     * 準正常系: 空セット
+     * Semi normal case: Empty map
      */
     @Test fun downCastMap_emptyMap() {
         val emptyMap = emptyMap<String, String>()
@@ -48,7 +48,7 @@ class DownCastMapTest : DownCastTest() {
     }
 
     /**
-     * 異常系: マップではなくシンプルな型
+     * Abnormal case: Simple type, not map type
      */
     @Test fun downCastMap_singleType() {
         val str = "Hello World!"
@@ -57,7 +57,7 @@ class DownCastMapTest : DownCastTest() {
     }
 
     /**
-     * 異常系: マップではなくセット
+     * Abnormal case: Set type, not map type
      */
     @Test fun downCastMap_set() {
         val strSet = setOf("Hello", "World", "!")
@@ -66,7 +66,7 @@ class DownCastMapTest : DownCastTest() {
     }
 
     /**
-     * 異常系: マップに内包しているキーの型が不一致
+     * Abnormal case: Mismatch key type in the map
      */
     @Test fun downCastMap_missTypedKey() {
         val intKeyMap = mapOf(
@@ -79,7 +79,7 @@ class DownCastMapTest : DownCastTest() {
     }
 
     /**
-     * 異常系: マップに内包しているバリューの型が不一致
+     * Abnormal case: Mismatch value type in the map
      */
     @Test fun downCastMap_missTypedValue() {
         val intValueMap = mapOf(
@@ -92,7 +92,7 @@ class DownCastMapTest : DownCastTest() {
     }
 
     /**
-     * 異常系: マップに内包しているキーとバリューの型が不一致
+     * Abnormal case: Mismatch key and value types in the map
      */
     @Test fun downCastMap_missTypedKeyValue() {
         val intMap = mapOf(
@@ -105,7 +105,7 @@ class DownCastMapTest : DownCastTest() {
     }
 
     /**
-     * 異常系: マップに内包しているキーの型が複数存在
+     * Abnormal case: Multiple key types in the map
      */
     @Test fun downCastMap_mixTypedKey() {
         val mixMap = mapOf(
@@ -119,7 +119,7 @@ class DownCastMapTest : DownCastTest() {
     }
 
     /**
-     * 異常系: マップに内包しているバリューの型が複数存在
+     * Abnormal case: Multiple value types in the map
      */
     @Test fun downCastMap_mixTypedValue() {
         val mixMap = mapOf(
@@ -133,7 +133,7 @@ class DownCastMapTest : DownCastTest() {
     }
 
     /**
-     * 異常系: マップに内包しているキーとバリューの型が複数存在
+     * Abnormal case: Multiple key and value types in the map
      */
     @Test fun downCastMap_mixTypedKeyValue() {
         val mixMap = mapOf(
@@ -147,7 +147,7 @@ class DownCastMapTest : DownCastTest() {
     }
 
     /**
-     * 異常系: オブジェクトがNULL
+     * Abnormal case: Null object
      */
     @Test fun downCastMap_null() {
         Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()

@@ -25,7 +25,7 @@ import org.junit.Test
 class DownCastArrayTest : DownCastTest() {
 
     /**
-     * 正常系
+     * Normal case
      */
     @Test fun downCastArray_ok() {
         val strArray = arrayOf("Hello", "World", "!")
@@ -34,7 +34,7 @@ class DownCastArrayTest : DownCastTest() {
     }
 
     /**
-     * 準正常系: 空配列
+     * Semi normal case: Empty array
      */
     @Test fun downCastArray_emptyArray() {
         val emptyArray = emptyArray<String>()
@@ -43,7 +43,7 @@ class DownCastArrayTest : DownCastTest() {
     }
 
     /**
-     * 異常系: 配列ではなくシンプルな型
+     * Abnormal case: Simple type, not array type
      */
     @Test fun downCastArray_singleType() {
         val str = "Hello World!"
@@ -52,7 +52,7 @@ class DownCastArrayTest : DownCastTest() {
     }
 
     /**
-     * 異常系: 配列ではなくリスト
+     * Abnormal case: List type, not array type
      */
     @Test fun downCastArray_list() {
         val strList = listOf("Hello", "World", "!")
@@ -61,7 +61,7 @@ class DownCastArrayTest : DownCastTest() {
     }
 
     /**
-     * 異常系: 配列に内包している型が不一致
+     * Abnormal case: Mismatch type in the array
      */
     @Test fun downCastArray_missTypedArray() {
         val intArray = arrayOf(1, 2, 3)
@@ -70,7 +70,7 @@ class DownCastArrayTest : DownCastTest() {
     }
 
     /**
-     * 異常系: 配列に内包している型が複数存在
+     * Abnormal case: Multiple types in the array
      */
     @Test fun downCastArray_mixTypedArray() {
         val mixArray = arrayOf("Hello", "World", 1, "!")
@@ -79,7 +79,7 @@ class DownCastArrayTest : DownCastTest() {
     }
 
     /**
-     * 異常系: オブジェクトがNULL
+     * Abnormal case: Null object
      */
     @Test fun downCastArray_null() {
         Truth.assertThat(anyObject.downCastArray<String>()).isNull()

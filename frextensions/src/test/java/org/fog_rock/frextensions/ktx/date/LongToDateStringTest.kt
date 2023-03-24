@@ -28,14 +28,14 @@ import java.util.*
 class LongToDateStringTest : DateTest() {
 
     /**
-     * Long.toDefaultDateString(): 正常系
+     * Long.toDefaultDateString(): Normal case
      */
     @Test fun toDefaultDateString_default() {
         Truth.assertThat(dateLong.toDefaultDateString(FRDateFormat.YYYYMMDD_HHMMSS_SSS.format))
             .isEqualTo("2021/06/01 04:23:57.558")
     }
     /**
-     * Long.toDefaultDateString(): 正常系、日本語ロケール
+     * Long.toDefaultDateString(): Normal case with JPN locale
      */
     @Test fun toDefaultDateString_localeJPN() {
         Truth.assertThat(dateLong
@@ -44,14 +44,14 @@ class LongToDateStringTest : DateTest() {
     }
 
     /**
-     * Long.toUtcDateString(): 正常系
+     * Long.toUtcDateString(): Normal case
      */
     @Test fun toUtcDateString_default() {
         Truth.assertThat(dateLong.toUtcDateString())
             .isEqualTo("2021-05-31T19:23:57.558Z")
     }
     /**
-     * Long.toUtcDateString(): 正常系、別フォーマット
+     * Long.toUtcDateString(): Normal case with another format
      */
     @Test fun toUtcDateString_format() {
         Truth.assertThat(dateLong.toUtcDateString(FRDateFormat.YYYYMMDD_HHMMSS.format))
@@ -59,7 +59,7 @@ class LongToDateStringTest : DateTest() {
     }
 
     /**
-     * Long.toDateString(): 正常系
+     * Long.toDateString(): Normal case
      */
     @Test fun toDateString_variety() {
         Truth.assertThat(dateLong
@@ -68,7 +68,7 @@ class LongToDateStringTest : DateTest() {
             .isEqualTo("Mon, 5/31/2021 15:23:57")
     }
     /**
-     * Long.toDateString(): 異常系、タイムゾーンミス
+     * Long.toDateString(): Abnormal case with timezone mistake
      */
     @Test fun toDateString_wrongTimeZone() {
         Truth.assertThat(dateLong

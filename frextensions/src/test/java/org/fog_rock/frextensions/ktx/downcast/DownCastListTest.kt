@@ -25,7 +25,7 @@ import org.junit.Test
 class DownCastListTest : DownCastTest() {
 
     /**
-     * 正常系
+     * Normal case
      */
     @Test fun downCastList_ok() {
         val strList = listOf("Hello", "World", "!")
@@ -34,7 +34,7 @@ class DownCastListTest : DownCastTest() {
     }
 
     /**
-     * 準正常系: 空リスト
+     * Semi normal case: Empty list
      */
     @Test fun downCastList_emptyList() {
         val emptyList = emptyList<String>()
@@ -43,7 +43,7 @@ class DownCastListTest : DownCastTest() {
     }
 
     /**
-     * 異常系: リストではなくシンプルな型
+     * Abnormal case: Simple type, not list type
      */
     @Test fun downCastList_singleType() {
         val str = "Hello World!"
@@ -52,7 +52,7 @@ class DownCastListTest : DownCastTest() {
     }
 
     /**
-     * 異常系: リストではなく配列
+     * Abnormal case: Array type, not list type
      */
     @Test fun downCastList_array() {
         val strArray = arrayOf("Hello", "World", "!")
@@ -61,7 +61,7 @@ class DownCastListTest : DownCastTest() {
     }
 
     /**
-     * 異常系: リストに内包している型が不一致
+     * Abnormal case: Mismatch type in the list
      */
     @Test fun downCastList_missTypedList() {
         val intList = listOf(1, 2, 3)
@@ -70,7 +70,7 @@ class DownCastListTest : DownCastTest() {
     }
 
     /**
-     * 異常系: リストに内包している型が複数存在
+     * Abnormal case: Multiple types in the list
      */
     @Test fun downCastList_mixTypedList() {
         val mixList = listOf("Hello", "World", 1, "!")
@@ -79,7 +79,7 @@ class DownCastListTest : DownCastTest() {
     }
 
     /**
-     * 異常系: オブジェクトがNULL
+     * Abnormal case: Null object
      */
     @Test fun downCastList_null() {
         Truth.assertThat(anyObject.downCastList<String>()).isNull()

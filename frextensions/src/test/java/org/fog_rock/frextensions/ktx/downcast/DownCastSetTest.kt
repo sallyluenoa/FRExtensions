@@ -25,7 +25,7 @@ import org.junit.Test
 class DownCastSetTest : DownCastTest() {
 
     /**
-     * 正常系
+     * Normal case
      */
     @Test fun downCastSet_ok() {
         val strSet = setOf("Hello", "World", "!")
@@ -34,7 +34,7 @@ class DownCastSetTest : DownCastTest() {
     }
 
     /**
-     * 準正常系: 空セット
+     * Semi normal case: Empty set
      */
     @Test fun downCastSet_emptySet() {
         val emptySet = emptySet<String>()
@@ -43,7 +43,7 @@ class DownCastSetTest : DownCastTest() {
     }
 
     /**
-     * 異常系: セットではなくシンプルな型
+     * Abnormal case: Simple type, not set type
      */
     @Test fun downCastSet_singleType() {
         val str = "Hello World!"
@@ -52,7 +52,7 @@ class DownCastSetTest : DownCastTest() {
     }
 
     /**
-     * 異常系: セットではなくリスト
+     * Abnormal case: List type, not set type
      */
     @Test fun downCastSet_list() {
         val strList = listOf("Hello", "World", "!")
@@ -61,7 +61,7 @@ class DownCastSetTest : DownCastTest() {
     }
 
     /**
-     * 異常系: セットに内包している型が不一致
+     * Abnormal case: Mismatch type in the set
      */
     @Test fun downCastSet_missTypedSet() {
         val intSet = setOf(1, 2, 3)
@@ -70,7 +70,7 @@ class DownCastSetTest : DownCastTest() {
     }
 
     /**
-     * 異常系: セットに内包している型が複数存在
+     * Abnormal case: Multiple types in the set
      */
     @Test fun downCastSet_mixTypedSet() {
         val mixSet = setOf("Hello", "World", 1, "!")
@@ -79,7 +79,7 @@ class DownCastSetTest : DownCastTest() {
     }
 
     /**
-     * 異常系: オブジェクトがNULL
+     * Abnormal case: Null object
      */
     @Test fun downCastSet_null() {
         Truth.assertThat(anyObject.downCastSet<String>()).isNull()

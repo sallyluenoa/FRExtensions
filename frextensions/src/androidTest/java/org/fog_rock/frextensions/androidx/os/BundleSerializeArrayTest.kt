@@ -28,7 +28,7 @@ import org.junit.runner.RunWith
 class BundleSerializeArrayTest : BundleTest() {
 
     /**
-     * ENUM型正常系
+     * Enum type: Normal case
      */
     @Test fun getSerializeArray_enumOK() {
         Truth.assertThat(bundle.getSerializeArray<EnumColor>(KEY_ENUM_COLOR_ARRAY))
@@ -36,7 +36,7 @@ class BundleSerializeArrayTest : BundleTest() {
     }
 
     /**
-     * ENUM型異常系（Serialize型ではない）
+     * Enum Type: Abnormal case (Not Serialize type)
      */
     @Test fun getSerializeArray_enumNG_nonSerialize() {
         Truth.assertThat(bundle.getSerializeArray<EnumColor>(KEY_ENUM_COLOR_CODE_ARRAY))
@@ -44,7 +44,7 @@ class BundleSerializeArrayTest : BundleTest() {
     }
 
     /**
-     * ENUM型異常系（別のSerialize型）
+     * Enum Type: Abnormal case (Another Serialize type)
      */
     @Test fun getSerializeArray_enumNG_otherSerialize() {
         Truth.assertThat(bundle.getSerializeArray<EnumColor>(KEY_DATA_COLOR_ARRAY))
@@ -52,7 +52,7 @@ class BundleSerializeArrayTest : BundleTest() {
     }
 
     /**
-     * ENUM型異常系（配列ではない）
+     * Enum Type: Abnormal case (Not array type)
      */
     @Test fun getSerializeArray_enumNG_nonArray() {
         Truth.assertThat(bundle.getSerializeArray<EnumColor>(KEY_ENUM_COLOR))
@@ -60,7 +60,7 @@ class BundleSerializeArrayTest : BundleTest() {
     }
 
     /**
-     * DATA型正常系
+     * Data type: Normal case
      */
     @Test fun getSerializeArray_dataOK() {
         Truth.assertThat(bundle.getSerializeArray<DataColor>(KEY_DATA_COLOR_ARRAY))
@@ -68,7 +68,7 @@ class BundleSerializeArrayTest : BundleTest() {
     }
 
     /**
-     * ENUM型異常系（Serialize型ではない）
+     * Data Type: Abnormal case (Not Serialize type)
      */
     @Test fun getSerializeArray_dataNG_nonSerialize() {
         Truth.assertThat(bundle.getSerializeArray<DataColor>(KEY_DATA_COLOR_CODE_ARRAY))
@@ -76,7 +76,7 @@ class BundleSerializeArrayTest : BundleTest() {
     }
 
     /**
-     * ENUM型異常系（別のSerialize型）
+     * Data Type: Abnormal case (Another Serialize type)
      */
     @Test fun getSerializeArray_dataNG_otherSerialize() {
         Truth.assertThat(bundle.getSerializeArray<DataColor>(KEY_ENUM_COLOR_ARRAY))
@@ -84,7 +84,7 @@ class BundleSerializeArrayTest : BundleTest() {
     }
 
     /**
-     * ENUM型異常系（配列ではない）
+     * Data Type: Abnormal case (Not array type)
      */
     @Test fun getSerializeArray_dataNG() {
         Truth.assertThat(bundle.getSerializeArray<DataColor>(KEY_DATA_COLOR))

@@ -28,7 +28,7 @@ import java.util.*
 class StringToDateTest : DateTest() {
 
     /**
-     * String.defaultToDate(): 正常系
+     * String.defaultToDate(): Normal case
      */
     @Test
     fun defaultToDate_default() {
@@ -37,7 +37,7 @@ class StringToDateTest : DateTest() {
             .isEqualTo(date)
     }
     /**
-     * String.defaultToDate(): 正常系、日本語ロケール
+     * String.defaultToDate(): Normal case with JPN locale
      */
     @Test
     fun defaultToDate_localeJPN() {
@@ -47,7 +47,7 @@ class StringToDateTest : DateTest() {
     }
 
     /**
-     * String.utcToDate(): 正常系
+     * String.utcToDate(): Normal case
      */
     @Test
     fun utcToDate_default() {
@@ -55,7 +55,7 @@ class StringToDateTest : DateTest() {
             .isEqualTo(date)
     }
     /**
-     * String.utcToDate(): 正常系、別フォーマット
+     * String.utcToDate(): Normal case with another format
      */
     @Test
     fun utcToDate_format() {
@@ -64,7 +64,7 @@ class StringToDateTest : DateTest() {
     }
 
     /**
-     * String.toDate(): 正常系
+     * String.toDate(): Normal case
      */
     @Test
     fun toDate_variety() {
@@ -74,7 +74,7 @@ class StringToDateTest : DateTest() {
             .isEqualTo(dateCutMillis)
     }
     /**
-     * String.toDate(): 異常系、フォーマットミス
+     * String.toDate(): Abnormal case with format mistake
      */
     @Test
     fun toDate_wrongFormat() {
@@ -84,7 +84,7 @@ class StringToDateTest : DateTest() {
             .isNull()
     }
     /**
-     * String.toDate(): 異常系、タイムゾーンミス
+     * String.toDate(): Abnormal case with timezone mistake
      */
     @Test
     fun toDate_wrongTimeZone() {
