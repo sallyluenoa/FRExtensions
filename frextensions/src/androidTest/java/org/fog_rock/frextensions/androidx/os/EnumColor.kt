@@ -24,8 +24,4 @@ enum class EnumColor(val code: String) {
 
     BLUE("#0000ff"),
     ;
-
-    companion object {
-        fun codes(): Array<String> = values().map { it.code }.toTypedArray()
-    }
 }

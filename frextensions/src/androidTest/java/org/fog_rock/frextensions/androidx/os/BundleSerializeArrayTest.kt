@@ -16,6 +16,7 @@
 
 package org.fog_rock.frextensions.androidx.os
 
+import androidx.core.os.bundleOf
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth
 import org.junit.Test
@@ -25,14 +26,44 @@ import org.junit.runner.RunWith
  * @see org.fog_rock.frextensions.androidx.os.getSerializeArray
  */
 @RunWith(AndroidJUnit4::class)
-class BundleSerializeArrayTest : BundleTest() {
+class BundleSerializeArrayTest {
+
+    private companion object {
+        const val KEY_ENUM_COLOR = "enum_color"
+        const val KEY_ENUM_COLOR_CODE = "enum_color_code"
+        const val KEY_ENUM_COLOR_ARRAY = "enum_color_array"
+        const val KEY_ENUM_COLOR_CODE_ARRAY = "enum_color_code_array"
+        const val KEY_DATA_COLOR = "data_color"
+        const val KEY_DATA_COLOR_CODE = "data_color_code"
+        const val KEY_DATA_COLOR_ARRAY = "data_color_array"
+        const val KEY_DATA_COLOR_CODE_ARRAY = "data_color_code_array"
+    }
+
+    private val bundle = run {
+        val enumColor = EnumColor.RED
+        val enumColorArray = EnumColor.values()
+        val enumColorCodeArray = enumColorArray.map { it.code }.toTypedArray()
+        val dataColor = DataColor("#000000")
+        val dataColorArray = arrayOf(dataColor, DataColor("#ffffff"))
+        val dataColorCodeArray = dataColorArray.map { it.code }.toTypedArray()
+        bundleOf(
+            KEY_ENUM_COLOR to enumColor,
+            KEY_ENUM_COLOR_CODE to enumColor.code,
+            KEY_ENUM_COLOR_ARRAY to enumColorArray,
+            KEY_ENUM_COLOR_CODE_ARRAY to enumColorCodeArray,
+            KEY_DATA_COLOR to dataColor,
+            KEY_DATA_COLOR_CODE to dataColor.code,
+            KEY_DATA_COLOR_ARRAY to dataColorArray,
+            KEY_DATA_COLOR_CODE_ARRAY to dataColorCodeArray,
+        )
+    }
 
     /**
      * Enum type: Normal case
      */
     @Test fun getSerializeArray_enumOK() {
         Truth.assertThat(bundle.getSerializeArray<EnumColor>(KEY_ENUM_COLOR_ARRAY))
-            .isEqualTo(enumColorArray)
+            .isEqualTo(arrayOf(EnumColor.RED, EnumColor.GREEN, EnumColor.BLUE))
     }
 
     /**
@@ -64,7 +95,7 @@ class BundleSerializeArrayTest : BundleTest() {
      */
     @Test fun getSerializeArray_dataOK() {
         Truth.assertThat(bundle.getSerializeArray<DataColor>(KEY_DATA_COLOR_ARRAY))
-            .isEqualTo(dataColorArray)
+            .isEqualTo(arrayOf(DataColor("#000000"), DataColor("#ffffff")))
     }
 
     /**
