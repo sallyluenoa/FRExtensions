@@ -22,66 +22,61 @@ import org.junit.Test
 /**
  * @see org.fog_rock.frextensions.ktx.downcast.downCastArray
  */
-class DownCastArrayTest : DownCastTest() {
+class DownCastArrayTest {
 
     /**
      * Normal case
      */
     @Test fun downCastArray_ok() {
-        val strArray = arrayOf("Hello", "World", "!")
-        anyObject = strArray
-        Truth.assertThat(anyObject.downCastArray<String>()).isEqualTo(strArray)
+        val obj: Any = arrayOf("Hello", "World", "!")
+        Truth.assertThat(obj.downCastArray<String>()).isEqualTo(arrayOf("Hello", "World", "!"))
     }
 
     /**
      * Semi normal case: Empty array
      */
     @Test fun downCastArray_emptyArray() {
-        val emptyArray = emptyArray<String>()
-        anyObject = emptyArray
-        Truth.assertThat(anyObject.downCastArray<String>()).isEqualTo(emptyArray)
+        val obj: Any = emptyArray<String>()
+        Truth.assertThat(obj.downCastArray<String>()).isEqualTo(emptyArray<String>())
     }
 
     /**
      * Abnormal case: Simple type, not array type
      */
     @Test fun downCastArray_singleType() {
-        val str = "Hello World!"
-        anyObject = str
-        Truth.assertThat(anyObject.downCastArray<String>()).isNull()
+        val obj: Any = "Hello World!"
+        Truth.assertThat(obj.downCastArray<String>()).isNull()
     }
 
     /**
      * Abnormal case: List type, not array type
      */
     @Test fun downCastArray_list() {
-        val strList = listOf("Hello", "World", "!")
-        anyObject = strList
-        Truth.assertThat(anyObject.downCastArray<String>()).isNull()
+        val obj: Any = listOf("Hello", "World", "!")
+        Truth.assertThat(obj.downCastArray<String>()).isNull()
     }
 
     /**
      * Abnormal case: Mismatch type in the array
      */
     @Test fun downCastArray_missTypedArray() {
-        val intArray = arrayOf(1, 2, 3)
-        anyObject = intArray
-        Truth.assertThat(anyObject.downCastArray<String>()).isNull()
+        val obj: Any = arrayOf(1, 2, 3)
+        Truth.assertThat(obj.downCastArray<String>()).isNull()
     }
 
     /**
      * Abnormal case: Multiple types in the array
      */
     @Test fun downCastArray_mixTypedArray() {
-        val mixArray = arrayOf("Hello", "World", 1, "!")
-        anyObject = mixArray
-        Truth.assertThat(anyObject.downCastArray<String>()).isNull()
+        val obj: Any = arrayOf("Hello", "World", 1, "!")
+        Truth.assertThat(obj.downCastArray<String>()).isNull()
     }
 
     /**
      * Abnormal case: Null object
      */
     @Test fun downCastArray_null() {
-        Truth.assertThat(anyObject.downCastArray<String>()).isNull()
+        val obj: Any? = null
+        Truth.assertThat(obj.downCastArray<String>()).isNull()
     }
 }
