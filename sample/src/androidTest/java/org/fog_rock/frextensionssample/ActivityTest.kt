@@ -36,18 +36,21 @@ class ActivityTest {
 
     @get:Rule val activityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
-    @Before fun before() {
+    @Before
+    fun before() {
         Intents.init()
     }
 
-    @After fun after() {
+    @After
+    fun after() {
         Intents.release()
     }
 
     /**
      * Context.startActivity(): Without Bundle.
      */
-    @Test fun startActivity_withoutBundle() {
+    @Test
+    fun startActivity_withoutBundle() {
         // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivity))
                 .perform(ViewActions.click())
@@ -64,7 +67,8 @@ class ActivityTest {
     /**
      * Context.startActivity(): With Bundle.
      */
-    @Test fun startActivity_withBundle() {
+    @Test
+    fun startActivity_withBundle() {
         // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.editText_message))
                 .perform(ViewActions.replaceText("startActivity"))
@@ -83,7 +87,8 @@ class ActivityTest {
     /**
      * Context.startActivity(): Show other Activity.
      */
-    @Test fun startActivity_otherActivity() {
+    @Test
+    fun startActivity_otherActivity() {
         // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.button_show_fragmentMainActivity))
                 .perform(ViewActions.click())
@@ -96,7 +101,8 @@ class ActivityTest {
     /**
      * Context.startActivityAndFinishAll(): Without Bundle.
      */
-    @Test fun startActivityAndFinishAll_withoutBundle() {
+    @Test
+    fun startActivityAndFinishAll_withoutBundle() {
         // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.button_test_startActivityAndFinishAll))
             .perform(ViewActions.click())
@@ -115,7 +121,8 @@ class ActivityTest {
     /**
      * Context.startActivityAndFinishAll(): With Bundle.
      */
-    @Test fun startActivityAndFinishAll_withBundle() {
+    @Test
+    fun startActivityAndFinishAll_withBundle() {
         // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.editText_message))
             .perform(ViewActions.replaceText("startActivityAndFinishAll"))

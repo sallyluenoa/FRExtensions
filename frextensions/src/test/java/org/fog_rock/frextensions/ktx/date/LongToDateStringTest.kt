@@ -34,14 +34,17 @@ class LongToDateStringTest {
     /**
      * Long.toDefaultDateString(): Normal case
      */
-    @Test fun toDefaultDateString_default() {
+    @Test
+    fun toDefaultDateString_default() {
         Truth.assertThat(dateLong.toDefaultDateString(FRDateFormat.YYYYMMDD_HHMMSS_SSS.format))
             .isEqualTo("2021/06/01 04:23:57.558")
     }
+
     /**
      * Long.toDefaultDateString(): Normal case with JPN locale
      */
-    @Test fun toDefaultDateString_localeJPN() {
+    @Test
+    fun toDefaultDateString_localeJPN() {
         Truth.assertThat(dateLong
             .toDefaultDateString(FRDateFormat.JP_YYYYMMDDE_HHMMSS.format, Locale.JAPAN))
             .isEqualTo("2021年6月1日（火）4時23分57秒")
@@ -50,14 +53,17 @@ class LongToDateStringTest {
     /**
      * Long.toUtcDateString(): Normal case
      */
-    @Test fun toUtcDateString_default() {
+    @Test
+    fun toUtcDateString_default() {
         Truth.assertThat(dateLong.toUtcDateString())
             .isEqualTo("2021-05-31T19:23:57.558Z")
     }
+
     /**
      * Long.toUtcDateString(): Normal case with another format
      */
-    @Test fun toUtcDateString_format() {
+    @Test
+    fun toUtcDateString_format() {
         Truth.assertThat(dateLong.toUtcDateString(FRDateFormat.YYYYMMDD_HHMMSS.format))
             .isEqualTo("2021/05/31 19:23:57")
     }
@@ -65,16 +71,19 @@ class LongToDateStringTest {
     /**
      * Long.toDateString(): Normal case
      */
-    @Test fun toDateString_variety() {
+    @Test
+    fun toDateString_variety() {
         Truth.assertThat(dateLong
             .toDateString("EEE, M/d/yyyy HH:mm:ss", Locale.US,
                 TimeZone.getTimeZone("America/Anguilla")))
             .isEqualTo("Mon, 5/31/2021 15:23:57")
     }
+
     /**
      * Long.toDateString(): Abnormal case with timezone mistake
      */
-    @Test fun toDateString_wrongTimeZone() {
+    @Test
+    fun toDateString_wrongTimeZone() {
         Truth.assertThat(dateLong
             .toDateString("EEE, M/d/yyyy HH:mm:ss", Locale.US,
                 TimeZone.getTimeZone("Invalid")))

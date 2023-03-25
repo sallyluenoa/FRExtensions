@@ -27,7 +27,8 @@ class DownCastSetTest {
     /**
      * Normal case
      */
-    @Test fun downCastSet_ok() {
+    @Test
+    fun downCastSet_ok() {
         val obj: Any = setOf("Hello", "World", "!")
         Truth.assertThat(obj.downCastSet<String>()).isEqualTo(setOf("Hello", "World", "!"))
     }
@@ -35,7 +36,8 @@ class DownCastSetTest {
     /**
      * Semi normal case: Empty set
      */
-    @Test fun downCastSet_emptySet() {
+    @Test
+    fun downCastSet_emptySet() {
         val obj: Any = emptySet<String>()
         Truth.assertThat(obj.downCastSet<String>()).isEqualTo(emptySet<String>())
     }
@@ -43,7 +45,8 @@ class DownCastSetTest {
     /**
      * Abnormal case: Simple type, not set type
      */
-    @Test fun downCastSet_singleType() {
+    @Test
+    fun downCastSet_singleType() {
         val obj: Any = "Hello World!"
         Truth.assertThat(obj.downCastSet<String>()).isNull()
     }
@@ -51,7 +54,8 @@ class DownCastSetTest {
     /**
      * Abnormal case: List type, not set type
      */
-    @Test fun downCastSet_list() {
+    @Test
+    fun downCastSet_list() {
         val obj: Any = listOf("Hello", "World", "!")
         Truth.assertThat(obj.downCastSet<String>()).isNull()
     }
@@ -59,7 +63,8 @@ class DownCastSetTest {
     /**
      * Abnormal case: Mismatch type in the set
      */
-    @Test fun downCastSet_missTypedSet() {
+    @Test
+    fun downCastSet_missTypedSet() {
         val obj: Any = setOf(1, 2, 3)
         Truth.assertThat(obj.downCastSet<String>()).isNull()
     }
@@ -67,7 +72,8 @@ class DownCastSetTest {
     /**
      * Abnormal case: Multiple types in the set
      */
-    @Test fun downCastSet_mixTypedSet() {
+    @Test
+    fun downCastSet_mixTypedSet() {
         val obj: Any = setOf("Hello", "World", 1, "!")
         Truth.assertThat(obj.downCastSet<String>()).isNull()
     }
@@ -75,7 +81,8 @@ class DownCastSetTest {
     /**
      * Abnormal case: Null object
      */
-    @Test fun downCastSet_null() {
+    @Test
+    fun downCastSet_null() {
         val obj: Any? = null
         Truth.assertThat(obj.downCastSet<String>()).isNull()
     }

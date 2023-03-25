@@ -36,6 +36,7 @@ class StringToDateTest {
             .defaultToDate(FRDateFormat.YYYYMMDD_HHMMSS_SSS.format))
             .isEqualTo(Date(1622489037558L))
     }
+
     /**
      * String.defaultToDate(): Normal case with JPN locale
      */
@@ -54,6 +55,7 @@ class StringToDateTest {
         Truth.assertThat("2021-05-31T19:23:57.558Z".utcToDate())
             .isEqualTo(Date(1622489037558L))
     }
+
     /**
      * String.utcToDate(): Normal case with another format
      */
@@ -73,6 +75,7 @@ class StringToDateTest {
                 TimeZone.getTimeZone("America/Anguilla")))
             .isEqualTo(Date(1622489037000L))
     }
+
     /**
      * String.toDate(): Abnormal case with format mistake
      */
@@ -83,6 +86,7 @@ class StringToDateTest {
                 TimeZone.getTimeZone("America/Anguilla")))
             .isNull()
     }
+
     /**
      * String.toDate(): Abnormal case with timezone mistake
      */

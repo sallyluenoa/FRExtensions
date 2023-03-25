@@ -27,7 +27,8 @@ class DownCastListTest {
     /**
      * Normal case
      */
-    @Test fun downCastList_ok() {
+    @Test
+    fun downCastList_ok() {
         val obj: Any = listOf("Hello", "World", "!")
         Truth.assertThat(obj.downCastList<String>()).isEqualTo(listOf("Hello", "World", "!"))
     }
@@ -35,7 +36,8 @@ class DownCastListTest {
     /**
      * Semi normal case: Empty list
      */
-    @Test fun downCastList_emptyList() {
+    @Test
+    fun downCastList_emptyList() {
         val obj: Any = emptyList<String>()
         Truth.assertThat(obj.downCastList<String>()).isEqualTo(emptyList<String>())
     }
@@ -43,7 +45,8 @@ class DownCastListTest {
     /**
      * Abnormal case: Simple type, not list type
      */
-    @Test fun downCastList_singleType() {
+    @Test
+    fun downCastList_singleType() {
         val obj: Any = "Hello World!"
         Truth.assertThat(obj.downCastList<String>()).isNull()
     }
@@ -51,7 +54,8 @@ class DownCastListTest {
     /**
      * Abnormal case: Array type, not list type
      */
-    @Test fun downCastList_array() {
+    @Test
+    fun downCastList_array() {
         val obj: Any = arrayOf("Hello", "World", "!")
         Truth.assertThat(obj.downCastList<String>()).isNull()
     }
@@ -59,7 +63,8 @@ class DownCastListTest {
     /**
      * Abnormal case: Mismatch type in the list
      */
-    @Test fun downCastList_missTypedList() {
+    @Test
+    fun downCastList_missTypedList() {
         val obj: Any = listOf(1, 2, 3)
         Truth.assertThat(obj.downCastList<String>()).isNull()
     }
@@ -67,7 +72,8 @@ class DownCastListTest {
     /**
      * Abnormal case: Multiple types in the list
      */
-    @Test fun downCastList_mixTypedList() {
+    @Test
+    fun downCastList_mixTypedList() {
         val obj: Any = listOf("Hello", "World", 1, "!")
         Truth.assertThat(obj.downCastList<String>()).isNull()
     }
@@ -75,7 +81,8 @@ class DownCastListTest {
     /**
      * Abnormal case: Null object
      */
-    @Test fun downCastList_null() {
+    @Test
+    fun downCastList_null() {
         val obj: Any? = null
         Truth.assertThat(obj.downCastList<String>()).isNull()
     }
