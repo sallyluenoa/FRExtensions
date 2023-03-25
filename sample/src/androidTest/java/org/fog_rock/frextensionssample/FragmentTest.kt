@@ -32,18 +32,21 @@ class FragmentTest {
 
     @get:Rule val activityScenarioRule = ActivityScenarioRule(FragmentMainActivity::class.java)
 
-    @Before fun before() {
+    @Before
+    fun before() {
         Intents.init()
     }
 
-    @After fun after() {
+    @After
+    fun after() {
         Intents.release()
     }
 
     /**
      * Check default state.
      */
-    @Test fun defaultState() {
+    @Test
+    fun defaultState() {
         // Check views.
         Espresso.onView(ViewMatchers.withId(R.id.textView_message))
             .check(ViewAssertions.matches(ViewMatchers.withText("MainFragment 0")))
@@ -59,7 +62,8 @@ class FragmentTest {
     /**
      * FragmentActivity.addFragment(): Click once.
      */
-    @Test fun addFragment_once() {
+    @Test
+    fun addFragment_once() {
         // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.button_test_addFragment))
             .perform(ViewActions.click())
@@ -83,7 +87,8 @@ class FragmentTest {
     /**
      * FragmentActivity.addFragment(): Click several times.
      */
-    @Test fun addFragment_severalTimes() {
+    @Test
+    fun addFragment_severalTimes() {
         for (i in 1..3) {
             // Perform view actions.
             Espresso.onView(ViewMatchers.withId(R.id.button_test_addFragment))
@@ -113,7 +118,8 @@ class FragmentTest {
     /**
      * FragmentActivity.replaceFragment(): Click once.
      */
-    @Test fun replaceFragment_once() {
+    @Test
+    fun replaceFragment_once() {
         // Perform view actions.
         Espresso.onView(ViewMatchers.withId(R.id.button_test_replaceFragment))
             .perform(ViewActions.click())
@@ -132,7 +138,8 @@ class FragmentTest {
     /**
      * FragmentActivity.replaceFragment(): Click several times.
      */
-    @Test fun replaceFragment_severalTimes() {
+    @Test
+    fun replaceFragment_severalTimes() {
         for (i in 1..3) {
             // Perform view actions.
             Espresso.onView(ViewMatchers.withId(R.id.button_test_replaceFragment))

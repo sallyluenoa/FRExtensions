@@ -20,68 +20,70 @@ import com.google.common.truth.Truth
 import org.junit.Test
 
 /**
- * @see downCastSet
+ * @see org.fog_rock.frextensions.ktx.downcast.downCastSet
  */
-class DownCastSetTest : DownCastTest() {
+class DownCastSetTest {
 
     /**
-     * 正常系
+     * Normal case
      */
-    @Test fun downCastSet_ok() {
-        val strSet = setOf("Hello", "World", "!")
-        anyObject = strSet
-        Truth.assertThat(anyObject.downCastSet<String>()).isEqualTo(strSet)
+    @Test
+    fun downCastSet_ok() {
+        val obj: Any = setOf("Hello", "World", "!")
+        Truth.assertThat(obj.downCastSet<String>()).isEqualTo(setOf("Hello", "World", "!"))
     }
 
     /**
-     * 準正常系: 空セット
+     * Semi normal case: Empty set
      */
-    @Test fun downCastSet_emptySet() {
-        val emptySet = emptySet<String>()
-        anyObject = emptySet
-        Truth.assertThat(anyObject.downCastSet<String>()).isEqualTo(emptySet)
+    @Test
+    fun downCastSet_emptySet() {
+        val obj: Any = emptySet<String>()
+        Truth.assertThat(obj.downCastSet<String>()).isEqualTo(emptySet<String>())
     }
 
     /**
-     * 異常系: セットではなくシンプルな型
+     * Abnormal case: Simple type, not set type
      */
-    @Test fun downCastSet_singleType() {
-        val str = "Hello World!"
-        anyObject = str
-        Truth.assertThat(anyObject.downCastSet<String>()).isNull()
+    @Test
+    fun downCastSet_singleType() {
+        val obj: Any = "Hello World!"
+        Truth.assertThat(obj.downCastSet<String>()).isNull()
     }
 
     /**
-     * 異常系: セットではなくリスト
+     * Abnormal case: List type, not set type
      */
-    @Test fun downCastSet_list() {
-        val strList = listOf("Hello", "World", "!")
-        anyObject = strList
-        Truth.assertThat(anyObject.downCastSet<String>()).isNull()
+    @Test
+    fun downCastSet_list() {
+        val obj: Any = listOf("Hello", "World", "!")
+        Truth.assertThat(obj.downCastSet<String>()).isNull()
     }
 
     /**
-     * 異常系: セットに内包している型が不一致
+     * Abnormal case: Mismatch type in the set
      */
-    @Test fun downCastSet_missTypedSet() {
-        val intSet = setOf(1, 2, 3)
-        anyObject = intSet
-        Truth.assertThat(anyObject.downCastSet<String>()).isNull()
+    @Test
+    fun downCastSet_missTypedSet() {
+        val obj: Any = setOf(1, 2, 3)
+        Truth.assertThat(obj.downCastSet<String>()).isNull()
     }
 
     /**
-     * 異常系: セットに内包している型が複数存在
+     * Abnormal case: Multiple types in the set
      */
-    @Test fun downCastSet_mixTypedSet() {
-        val mixSet = setOf("Hello", "World", 1, "!")
-        anyObject = mixSet
-        Truth.assertThat(anyObject.downCastSet<String>()).isNull()
+    @Test
+    fun downCastSet_mixTypedSet() {
+        val obj: Any = setOf("Hello", "World", 1, "!")
+        Truth.assertThat(obj.downCastSet<String>()).isNull()
     }
 
     /**
-     * 異常系: オブジェクトがNULL
+     * Abnormal case: Null object
      */
-    @Test fun downCastSet_null() {
-        Truth.assertThat(anyObject.downCastSet<String>()).isNull()
+    @Test
+    fun downCastSet_null() {
+        val obj: Any? = null
+        Truth.assertThat(obj.downCastSet<String>()).isNull()
     }
 }

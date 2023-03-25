@@ -44,7 +44,11 @@ fun FragmentActivity.replaceFragment(fragment: Fragment, @IdRes resId: Int) {
  * @param resId A resource ID of the view
  * @param addStack True to add the fragment to the back stack, or false otherwise.
  */
-private fun FragmentActivity.replaceFragment(fragment: Fragment, @IdRes resId: Int, addStack: Boolean) {
+private fun FragmentActivity.replaceFragment(
+    fragment: Fragment,
+    @IdRes resId: Int,
+    addStack: Boolean
+) {
     supportFragmentManager.beginTransaction().apply {
         replace(resId, fragment)
         if (addStack) addToBackStack(null)
