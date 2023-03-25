@@ -22,7 +22,7 @@ import org.junit.Test
 /**
  * @see org.fog_rock.frextensions.ktx.enum.valueOf
  */
-class EnumValueOf {
+class EnumValueOfTest {
 
     /**
      * Int -> Enum: Normal case
