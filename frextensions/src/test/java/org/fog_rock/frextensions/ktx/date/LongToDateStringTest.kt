@@ -25,7 +25,11 @@ import java.util.*
  * @see org.fog_rock.frextensions.ktx.date.toUtcDateString
  * @see org.fog_rock.frextensions.ktx.date.toDateString
  */
-class LongToDateStringTest : DateTest() {
+class LongToDateStringTest {
+
+    // 2021/06/01 04:23:57.558 JST
+    // 2021/05/31 19:23:57.558 UTC
+    private val dateLong = 1622489037558L
 
     /**
      * Long.toDefaultDateString(): Normal case

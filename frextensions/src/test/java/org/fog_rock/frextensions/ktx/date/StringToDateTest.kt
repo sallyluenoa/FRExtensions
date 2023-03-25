@@ -25,7 +25,7 @@ import java.util.*
  * @see org.fog_rock.frextensions.ktx.date.utcToDate
  * @see org.fog_rock.frextensions.ktx.date.toDate
  */
-class StringToDateTest : DateTest() {
+class StringToDateTest {
 
     /**
      * String.defaultToDate(): Normal case
@@ -34,7 +34,7 @@ class StringToDateTest : DateTest() {
     fun defaultToDate_default() {
         Truth.assertThat("2021/06/01 04:23:57.558"
             .defaultToDate(FRDateFormat.YYYYMMDD_HHMMSS_SSS.format))
-            .isEqualTo(date)
+            .isEqualTo(Date(1622489037558L))
     }
     /**
      * String.defaultToDate(): Normal case with JPN locale
@@ -43,7 +43,7 @@ class StringToDateTest : DateTest() {
     fun defaultToDate_localeJPN() {
         Truth.assertThat("2021年6月1日（火）4時23分57秒"
             .defaultToDate(FRDateFormat.JP_YYYYMMDDE_HHMMSS.format, Locale.JAPAN))
-            .isEqualTo(dateCutMillis)
+            .isEqualTo(Date(1622489037000L))
     }
 
     /**
@@ -52,7 +52,7 @@ class StringToDateTest : DateTest() {
     @Test
     fun utcToDate_default() {
         Truth.assertThat("2021-05-31T19:23:57.558Z".utcToDate())
-            .isEqualTo(date)
+            .isEqualTo(Date(1622489037558L))
     }
     /**
      * String.utcToDate(): Normal case with another format
@@ -60,7 +60,7 @@ class StringToDateTest : DateTest() {
     @Test
     fun utcToDate_format() {
         Truth.assertThat("2021/05/31 19:23:57".utcToDate(FRDateFormat.YYYYMMDD_HHMMSS.format))
-            .isEqualTo(dateCutMillis)
+            .isEqualTo(Date(1622489037000L))
     }
 
     /**
@@ -71,7 +71,7 @@ class StringToDateTest : DateTest() {
         Truth.assertThat("Mon, 5/31/2021 15:23:57"
             .toDate("EEE, M/d/yyyy HH:mm:ss", Locale.US,
                 TimeZone.getTimeZone("America/Anguilla")))
-            .isEqualTo(dateCutMillis)
+            .isEqualTo(Date(1622489037000L))
     }
     /**
      * String.toDate(): Abnormal case with format mistake
@@ -91,6 +91,6 @@ class StringToDateTest : DateTest() {
         Truth.assertThat("Mon, 5/31/2021 19:23:57"
             .toDate("EEE, M/d/yyyy HH:mm:ss", Locale.US,
                 TimeZone.getTimeZone("Invalid")))
-            .isEqualTo(dateCutMillis)
+            .isEqualTo(Date(1622489037000L))
     }
 }
