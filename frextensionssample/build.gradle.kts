@@ -17,7 +17,6 @@
 val domain = "org.fog-rock"
 val release = "release"
 val javaVersion = JavaVersion.VERSION_11
-val Project.packageName: String get() = "frextensions${this.name}"
 val Project.versionName: String get() = (this.findProperty("version.name") ?: "0.0.1-SNAPSHOT").toString()
 val Project.versionCode: Int get() = (this.findProperty("version.code") ?: "1").toString().toInt()
 
@@ -28,11 +27,11 @@ plugins {
 }
 
 android {
-    namespace = "${domain}.${project.packageName}".replace('-', '_')
+    namespace = "${domain}.${project.name}".replace('-', '_')
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        applicationId = "${domain}.${project.packageName}".replace('-', '_')
+        applicationId = "${domain}.${project.name}".replace('-', '_')
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = project.versionCode

@@ -37,4 +37,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "FRExtensions"
-include("frextensions", "sample")
+include("frextensions", "frextensionssample")
