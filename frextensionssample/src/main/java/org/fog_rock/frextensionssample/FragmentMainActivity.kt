@@ -20,8 +20,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import org.fog_rock.frextensions.androidx.fragment.addFragment
 import org.fog_rock.frextensions.androidx.fragment.replaceFragment
-import org.fog_rock.frextensions.androidx.log.logI
 import org.fog_rock.frextensionssample.databinding.ActivityFragmentMainBinding
+import org.fog_rock.frlogs.frLogI
 
 class FragmentMainActivity : AppCompatActivity() {
 
@@ -34,12 +34,12 @@ class FragmentMainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.buttonTestAddFragment.setOnClickListener {
-            logI("Clicked Test addFragment.")
+            frLogI("Clicked Test addFragment.")
             val count = supportFragmentManager.backStackEntryCount + 1
             addFragment(SubFragment.newInstance(count), R.id.fragment_container)
         }
         binding.buttonTestReplaceFragment.setOnClickListener {
-            logI("Clicked Test replaceFragment.")
+            frLogI("Clicked Test replaceFragment.")
             replaceFragment(SubFragment.newInstance(), R.id.fragment_container)
         }
 
