@@ -78,4 +78,5 @@ dependencies {
     implementation(libs.google.android.material)
     testImplementation(libs.bundles.junit.test)
     androidTestImplementation(libs.bundles.androidx.test)
+    androidTestImplementation(libs.androidx.test.espresso.intents)
 }
