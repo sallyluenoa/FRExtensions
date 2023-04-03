@@ -7,13 +7,6 @@ $dokka.location:org.fog_rock.frextensions.androidx.content//startActivityAndFini
 $dokka.location:org.fog_rock.frextensions.androidx.fragment////PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.fragment/index.html
 $dokka.location:org.fog_rock.frextensions.androidx.fragment//addFragment/androidx.fragment.app.FragmentActivity#androidx.fragment.app.Fragment#kotlin.Int/PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.fragment/add-fragment.html
 $dokka.location:org.fog_rock.frextensions.androidx.fragment//replaceFragment/androidx.fragment.app.FragmentActivity#androidx.fragment.app.Fragment#kotlin.Int/PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.fragment/replace-fragment.html
-$dokka.location:org.fog_rock.frextensions.androidx.log////PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.log/index.html
-$dokka.location:org.fog_rock.frextensions.androidx.log//TAG/kotlin.Any#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.log/-t-a-g.html
-$dokka.location:org.fog_rock.frextensions.androidx.log//logD/kotlin.Any#kotlin.String/PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.log/log-d.html
-$dokka.location:org.fog_rock.frextensions.androidx.log//logE/kotlin.Any#kotlin.String/PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.log/log-e.html
-$dokka.location:org.fog_rock.frextensions.androidx.log//logI/kotlin.Any#kotlin.String/PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.log/log-i.html
-$dokka.location:org.fog_rock.frextensions.androidx.log//logV/kotlin.Any#kotlin.String/PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.log/log-v.html
-$dokka.location:org.fog_rock.frextensions.androidx.log//logW/kotlin.Any#kotlin.String/PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.log/log-w.html
 $dokka.location:org.fog_rock.frextensions.androidx.os////PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.os/index.html
 $dokka.location:org.fog_rock.frextensions.androidx.os//getSerialize/android.os.Bundle#kotlin.String/PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.os/get-serialize.html
 $dokka.location:org.fog_rock.frextensions.androidx.os//getSerializeArray/android.os.Bundle#kotlin.String/PointingToDeclaration/frextensions/org.fog_rock.frextensions.androidx.os/get-serialize-array.html
@@ -32,12 +25,16 @@ $dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS/
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat.YYYYMMDD_HHMMSS_SSS///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/-y-y-y-y-m-m-d-d_-h-h-m-m-s-s_-s-s-s/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat/format/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/format.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat/valueOf/#kotlin.String/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/value-of.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRDateFormat/values/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-date-format/values.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.DAY///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-d-a-y/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.HOUR///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-h-o-u-r/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.MINUTE///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-m-i-n-u-t-e/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis.SECOND///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/-s-e-c-o-n-d/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis///PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis/millis/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/millis.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis/valueOf/#kotlin.String/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/value-of.html
+$dokka.location:org.fog_rock.frextensions.ktx.date/FRTimeMillis/values/#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.date/-f-r-time-millis/values.html
 $dokka.location:org.fog_rock.frextensions.ktx.downcast////PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.downcast/index.html
 $dokka.location:org.fog_rock.frextensions.ktx.downcast//downCastArray/kotlin.Any?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.downcast/down-cast-array.html
 $dokka.location:org.fog_rock.frextensions.ktx.downcast//downCastList/kotlin.Any?#/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.downcast/down-cast-list.html
@@ -66,7 +63,6 @@ $dokka.location:org.fog_rock.frextensions.ktx.operation//orAll/#kotlin.Array[kot
 $dokka.location:org.fog_rock.frextensions.ktx.operation//xorAll/#kotlin.Array[kotlin.Boolean?]/PointingToDeclaration/frextensions/org.fog_rock.frextensions.ktx.operation/xor-all.html
 org.fog_rock.frextensions.androidx.content
 org.fog_rock.frextensions.androidx.fragment
-org.fog_rock.frextensions.androidx.log
 org.fog_rock.frextensions.androidx.os
 org.fog_rock.frextensions.ktx.date
 org.fog_rock.frextensions.ktx.downcast
