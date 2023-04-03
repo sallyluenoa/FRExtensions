@@ -1,3 +1,0 @@
-include ':frextensions'
-include ':sample'
-rootProject.name = "FRExtensions"

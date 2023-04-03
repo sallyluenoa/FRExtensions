@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2021 SallyLueNoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,68 +20,70 @@ import com.google.common.truth.Truth
 import org.junit.Test
 
 /**
- * @see downCastArray
+ * @see org.fog_rock.frextensions.ktx.downcast.downCastArray
  */
-class DownCastArrayTest : DownCastTest() {
+class DownCastArrayTest {
 
     /**
-     * 正常系
+     * Normal case
      */
-    @Test fun downCastArray_ok() {
-        val strArray = arrayOf("Hello", "World", "!")
-        anyObject = strArray
-        Truth.assertThat(anyObject.downCastArray<String>()).isEqualTo(strArray)
+    @Test
+    fun downCastArray_ok() {
+        val obj: Any = arrayOf("Hello", "World", "!")
+        Truth.assertThat(obj.downCastArray<String>()).isEqualTo(arrayOf("Hello", "World", "!"))
     }
 
     /**
-     * 準正常系: 空配列
+     * Semi normal case: Empty array
      */
-    @Test fun downCastArray_emptyArray() {
-        val emptyArray = emptyArray<String>()
-        anyObject = emptyArray
-        Truth.assertThat(anyObject.downCastArray<String>()).isEqualTo(emptyArray)
+    @Test
+    fun downCastArray_emptyArray() {
+        val obj: Any = emptyArray<String>()
+        Truth.assertThat(obj.downCastArray<String>()).isEqualTo(emptyArray<String>())
     }
 
     /**
-     * 異常系: 配列ではなくシンプルな型
+     * Abnormal case: Simple type, not array type
      */
-    @Test fun downCastArray_singleType() {
-        val str = "Hello World!"
-        anyObject = str
-        Truth.assertThat(anyObject.downCastArray<String>()).isNull()
+    @Test
+    fun downCastArray_singleType() {
+        val obj: Any = "Hello World!"
+        Truth.assertThat(obj.downCastArray<String>()).isNull()
     }
 
     /**
-     * 異常系: 配列ではなくリスト
+     * Abnormal case: List type, not array type
      */
-    @Test fun downCastArray_list() {
-        val strList = listOf("Hello", "World", "!")
-        anyObject = strList
-        Truth.assertThat(anyObject.downCastArray<String>()).isNull()
+    @Test
+    fun downCastArray_list() {
+        val obj: Any = listOf("Hello", "World", "!")
+        Truth.assertThat(obj.downCastArray<String>()).isNull()
     }
 
     /**
-     * 異常系: 配列に内包している型が不一致
+     * Abnormal case: Mismatch type in the array
      */
-    @Test fun downCastArray_missTypedArray() {
-        val intArray = arrayOf(1, 2, 3)
-        anyObject = intArray
-        Truth.assertThat(anyObject.downCastArray<String>()).isNull()
+    @Test
+    fun downCastArray_missTypedArray() {
+        val obj: Any = arrayOf(1, 2, 3)
+        Truth.assertThat(obj.downCastArray<String>()).isNull()
     }
 
     /**
-     * 異常系: 配列に内包している型が複数存在
+     * Abnormal case: Multiple types in the array
      */
-    @Test fun downCastArray_mixTypedArray() {
-        val mixArray = arrayOf("Hello", "World", 1, "!")
-        anyObject = mixArray
-        Truth.assertThat(anyObject.downCastArray<String>()).isNull()
+    @Test
+    fun downCastArray_mixTypedArray() {
+        val obj: Any = arrayOf("Hello", "World", 1, "!")
+        Truth.assertThat(obj.downCastArray<String>()).isNull()
     }
 
     /**
-     * 異常系: オブジェクトがNULL
+     * Abnormal case: Null object
      */
-    @Test fun downCastArray_null() {
-        Truth.assertThat(anyObject.downCastArray<String>()).isNull()
+    @Test
+    fun downCastArray_null() {
+        val obj: Any? = null
+        Truth.assertThat(obj.downCastArray<String>()).isNull()
     }
 }

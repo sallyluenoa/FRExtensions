@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2021 SallyLueNoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,61 +16,98 @@
 
 package org.fog_rock.frextensions.androidx.os
 
+import androidx.core.os.bundleOf
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.common.truth.Truth
 import org.junit.Test
 import org.junit.runner.RunWith
 
 /**
- * @see getSerialize
+ * @see org.fog_rock.frextensions.androidx.os.getSerialize
  */
 @RunWith(AndroidJUnit4::class)
-class BundleSerializeTest : BundleTest() {
+class BundleSerializeTest {
+
+    private companion object {
+        const val KEY_ENUM_COLOR = "enum_color"
+        const val KEY_ENUM_COLOR_CODE = "enum_color_code"
+        const val KEY_ENUM_COLOR_ARRAY = "enum_color_array"
+        const val KEY_ENUM_COLOR_CODE_ARRAY = "enum_color_code_array"
+        const val KEY_DATA_COLOR = "data_color"
+        const val KEY_DATA_COLOR_CODE = "data_color_code"
+        const val KEY_DATA_COLOR_ARRAY = "data_color_array"
+        const val KEY_DATA_COLOR_CODE_ARRAY = "data_color_code_array"
+    }
+
+    private val bundle = run {
+        val enumColor = EnumColor.RED
+        val enumColorArray = EnumColor.values()
+        val enumColorCodeArray = enumColorArray.map { it.code }.toTypedArray()
+        val dataColor = DataColor("#000000")
+        val dataColorArray = arrayOf(dataColor, DataColor("#ffffff"))
+        val dataColorCodeArray = dataColorArray.map { it.code }.toTypedArray()
+        bundleOf(
+            KEY_ENUM_COLOR to enumColor,
+            KEY_ENUM_COLOR_CODE to enumColor.code,
+            KEY_ENUM_COLOR_ARRAY to enumColorArray,
+            KEY_ENUM_COLOR_CODE_ARRAY to enumColorCodeArray,
+            KEY_DATA_COLOR to dataColor,
+            KEY_DATA_COLOR_CODE to dataColor.code,
+            KEY_DATA_COLOR_ARRAY to dataColorArray,
+            KEY_DATA_COLOR_CODE_ARRAY to dataColorCodeArray,
+        )
+    }
 
     /**
-     * ENUM型正常系
+     * Enum type: Normal case
      */
-    @Test fun getSerialize_enumOK() {
+    @Test
+    fun getSerialize_enumOK() {
         Truth.assertThat(bundle.getSerialize<EnumColor>(KEY_ENUM_COLOR))
             .isEqualTo(EnumColor.RED)
     }
 
     /**
-     * ENUM型異常系（Serialize型ではない）
+     * Enum Type: Abnormal case (Not Serialize type)
      */
-    @Test fun getSerialize_enumNG_nonSerialize() {
+    @Test
+    fun getSerialize_enumNG_nonSerialize() {
         Truth.assertThat(bundle.getSerialize<EnumColor>(KEY_ENUM_COLOR_CODE))
             .isNull()
     }
 
     /**
-     * ENUM型異常系（別のSerialize型）
+     * Enum Type: Abnormal case (Another Serialize type)
      */
-    @Test fun getSerialize_enumNG_otherSerialize() {
+    @Test
+    fun getSerialize_enumNG_otherSerialize() {
         Truth.assertThat(bundle.getSerialize<EnumColor>(KEY_DATA_COLOR))
             .isNull()
     }
 
     /**
-     * DATA型正常系
+     * Data type: Normal case
      */
-    @Test fun getSerialize_dataOK() {
+    @Test
+    fun getSerialize_dataOK() {
         Truth.assertThat(bundle.getSerialize<DataColor>(KEY_DATA_COLOR))
-            .isEqualTo(blackColor)
+            .isEqualTo(DataColor("#000000"))
     }
 
     /**
-     * DATA型異常系（Serialize型ではない）
+     * Data Type: Abnormal case (Not Serialize type)
      */
-    @Test fun getSerialize_dataNG_nonSerialize() {
+    @Test
+    fun getSerialize_dataNG_nonSerialize() {
         Truth.assertThat(bundle.getSerialize<DataColor>(KEY_DATA_COLOR_CODE))
             .isNull()
     }
 
     /**
-     * DATA型異常系（別のSerialize型）
+     * Data Type: Abnormal case (Another Serialize type)
      */
-    @Test fun getSerialize_dataNG_otherSerialize() {
+    @Test
+    fun getSerialize_dataNG_otherSerialize() {
         Truth.assertThat(bundle.getSerialize<DataColor>(KEY_ENUM_COLOR))
             .isNull()
     }

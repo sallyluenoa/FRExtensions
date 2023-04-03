@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2021 SallyLueNoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,8 +24,4 @@ enum class EnumColor(val code: String) {
 
     BLUE("#0000ff"),
     ;
-
-    companion object {
-        fun codes(): Array<String> = values().map { it.code }.toTypedArray()
-    }
 }

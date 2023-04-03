@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2022 SallyLueNoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,7 +20,7 @@ package org.fog_rock.frextensions.ktx.enum
  * Convert from a value of any type to an Enum class.
  * @param value A value of any type
  * @return An Enum class if the value can be converted, or null otherwise.
- * @see FRBaseEnum
+ * @see org.fog_rock.frextensions.ktx.enum.FRBaseEnum
  */
 inline fun <reified EnumT, TypeT> valueOfOrNull(value: TypeT): EnumT?
         where EnumT : Enum<EnumT>,
@@ -31,7 +31,7 @@ inline fun <reified EnumT, TypeT> valueOfOrNull(value: TypeT): EnumT?
  * Convert from a value of any type to an Enum class.
  * @param value A value of any type
  * @return An Enum class if the value can be converted, or a default value otherwise.
- * @see FRBaseEnum
+ * @see org.fog_rock.frextensions.ktx.enum.FRBaseEnum
  */
 inline fun <reified EnumT, TypeT> valueOf(value: TypeT, defaultValue: EnumT): EnumT
         where EnumT : Enum<EnumT>,

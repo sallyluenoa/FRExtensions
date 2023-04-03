@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2021 SallyLueNoa
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,136 +20,143 @@ import com.google.common.truth.Truth
 import org.junit.Test
 
 /**
- * @see downCastMap
+ * @see org.fog_rock.frextensions.ktx.downcast.downCastMap
  */
-class DownCastMapTest : DownCastTest() {
+class DownCastMapTest {
 
     /**
-     * 正常系
+     * Normal case
      */
     @Test
     fun downCastMap_ok() {
-        val strMap = mapOf(
+        val obj: Any = mapOf(
             "Hello" to "Hello",
             "World" to "World",
             "!" to "!",
         )
-        anyObject = strMap
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isEqualTo(strMap)
+        Truth.assertThat(obj.downCastMap<String, String>()).isEqualTo(
+            mapOf(
+                "Hello" to "Hello",
+                "World" to "World",
+                "!" to "!",
+            )
+        )
     }
 
     /**
-     * 準正常系: 空セット
+     * Semi normal case: Empty map
      */
-    @Test fun downCastMap_emptyMap() {
-        val emptyMap = emptyMap<String, String>()
-        anyObject = emptyMap
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isEqualTo(emptyMap)
+    @Test
+    fun downCastMap_emptyMap() {
+        val obj: Any = emptyMap<String, String>()
+        Truth.assertThat(obj.downCastMap<String, String>()).isEqualTo(emptyMap<String, String>())
     }
 
     /**
-     * 異常系: マップではなくシンプルな型
+     * Abnormal case: Simple type, not map type
      */
-    @Test fun downCastMap_singleType() {
-        val str = "Hello World!"
-        anyObject = str
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
+    @Test
+    fun downCastMap_singleType() {
+        val obj: Any = "Hello World!"
+        Truth.assertThat(obj.downCastMap<String, String>()).isNull()
     }
 
     /**
-     * 異常系: マップではなくセット
+     * Abnormal case: Set type, not map type
      */
-    @Test fun downCastMap_set() {
-        val strSet = setOf("Hello", "World", "!")
-        anyObject = strSet
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
+    @Test
+    fun downCastMap_set() {
+        val obj: Any = setOf("Hello", "World", "!")
+        Truth.assertThat(obj.downCastMap<String, String>()).isNull()
     }
 
     /**
-     * 異常系: マップに内包しているキーの型が不一致
+     * Abnormal case: Mismatch key type in the map
      */
-    @Test fun downCastMap_missTypedKey() {
-        val intKeyMap = mapOf(
+    @Test
+    fun downCastMap_missTypedKey() {
+        val obj: Any = mapOf(
             1 to "Hello",
             2 to "World",
             3 to "!",
         )
-        anyObject = intKeyMap
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
+        Truth.assertThat(obj.downCastMap<String, String>()).isNull()
     }
 
     /**
-     * 異常系: マップに内包しているバリューの型が不一致
+     * Abnormal case: Mismatch value type in the map
      */
-    @Test fun downCastMap_missTypedValue() {
-        val intValueMap = mapOf(
+    @Test
+    fun downCastMap_missTypedValue() {
+        val obj: Any = mapOf(
             "Hello" to 1,
             "World" to 2,
             "!" to 3,
         )
-        anyObject = intValueMap
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
+        Truth.assertThat(obj.downCastMap<String, String>()).isNull()
     }
 
     /**
-     * 異常系: マップに内包しているキーとバリューの型が不一致
+     * Abnormal case: Mismatch key and value types in the map
      */
-    @Test fun downCastMap_missTypedKeyValue() {
-        val intMap = mapOf(
+    @Test
+    fun downCastMap_missTypedKeyValue() {
+        val obj: Any = mapOf(
             1 to 1,
             2 to 2,
             3 to 3,
         )
-        anyObject = intMap
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
+        Truth.assertThat(obj.downCastMap<String, String>()).isNull()
     }
 
     /**
-     * 異常系: マップに内包しているキーの型が複数存在
+     * Abnormal case: Multiple key types in the map
      */
-    @Test fun downCastMap_mixTypedKey() {
-        val mixMap = mapOf(
+    @Test
+    fun downCastMap_mixTypedKey() {
+        val obj: Any = mapOf(
             "Hello" to "Hello",
             "World" to "World",
             1 to "1",
             "!" to "!",
         )
-        anyObject = mixMap
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
+        Truth.assertThat(obj.downCastMap<String, String>()).isNull()
     }
 
     /**
-     * 異常系: マップに内包しているバリューの型が複数存在
+     * Abnormal case: Multiple value types in the map
      */
-    @Test fun downCastMap_mixTypedValue() {
-        val mixMap = mapOf(
+    @Test
+    fun downCastMap_mixTypedValue() {
+        val obj: Any = mapOf(
             "Hello" to "Hello",
             "World" to "World",
             "1" to 1,
             "!" to "!",
         )
-        anyObject = mixMap
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
+        Truth.assertThat(obj.downCastMap<String, String>()).isNull()
     }
 
     /**
-     * 異常系: マップに内包しているキーとバリューの型が複数存在
+     * Abnormal case: Multiple key and value types in the map
      */
-    @Test fun downCastMap_mixTypedKeyValue() {
-        val mixMap = mapOf(
+    @Test
+    fun downCastMap_mixTypedKeyValue() {
+        val obj: Any = mapOf(
             "Hello" to "Hello",
             "World" to "World",
             1 to 1,
             "!" to "!",
         )
-        anyObject = mixMap
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
+        Truth.assertThat(obj.downCastMap<String, String>()).isNull()
     }
 
     /**
-     * 異常系: オブジェクトがNULL
+     * Abnormal case: Null object
      */
-    @Test fun downCastMap_null() {
-        Truth.assertThat(anyObject.downCastMap<String, String>()).isNull()
+    @Test
+    fun downCastMap_null() {
+        val obj: Any? = null
+        Truth.assertThat(obj.downCastMap<String, String>()).isNull()
     }
 }
