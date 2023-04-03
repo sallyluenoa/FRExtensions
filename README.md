@@ -1,6 +1,6 @@
 # FRExtensions
 
-[FRExtensions](https://sallyluenoa.github.io/FRExtensions/index.html) is a library of additional extensions for Kotlin Android.
+FRExtensions is a library of additional extensions for Kotlin Android.
 
 ## How to Install
 
@@ -15,40 +15,35 @@ You should create a GitHub personal access token to read the GitHub packages in 
 
 ### Install your Android Project with Gradle
 
-In your Android project, open build.gradle of the root and add the following settings.  
+In your Android project, open the Gradle file (.gradle or .gradle.kts) of the root and add the following settings.  
 `ACCOUNT_NAME` is your GitHub account name and `ACCESS_TOKEN` is the token you created above.
 
 ```Gradle
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
+repositories {
+    google()
+    mavenCentral()
 
-        // Add this settings.
-        maven {
-            name = 'GitHubPackages'
-            url = uri('https://maven.pkg.github.com/sallyluenoa/FRExtensions')
-            credentials {
-                username = ACCOUNT_NAME
-                password = ACCESS_TOKEN
-            }
+    // Add this settings.
+    maven {
+        url = uri("https://maven.pkg.github.com/sallyluenoa/FRExtensions")
+        credentials {
+            username = "ACCOUNT_NAME"
+            password = "ACCESS_TOKEN"
         }
     }
 }
 ```
 
-Open build.gradle of the module and add the following dependency.
+Open the Gradle file of the module and add the following dependency, then sync your project with Gradle.  
+The library will be installed in your project.
 
 ```Gradle
-implementation 'org.fog-rock.frextensions:frextensions:1.0.0'
+implementation("org.fog-rock.frextensions:frextensions:0.0.1")
 ```
-
-Then sync your project with Gradle.  
-The library will be installed in your project.
 
 ## Releases
 
-Please read [GitHub Releases](https://github.com/sallyluenoa/FRExtensions/releases).
+Release notes are available [here](./release-notes/README.md).
 
 ## Documents
 
